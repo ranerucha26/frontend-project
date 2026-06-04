@@ -1,0 +1,6 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Replace domain after deploy if different
+Sitemap: https://sapphireinfotech.com/sitemap.xml
