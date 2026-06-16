@@ -1,22 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function PopupModal() {
+  // ✅ Kept as false so it remains closed when the project runs
   const [isOpen, setIsOpen] = useState(false)
   const [submitted, setSubmitted] = useState(false)
-
-  useEffect(() => {
-    const hasShownPopup = sessionStorage.getItem('popupShown')
-
-    if (!hasShownPopup) {
-      const timer = setTimeout(() => {
-        setIsOpen(true)
-        sessionStorage.setItem('popupShown', 'true')
-      }, 3000)
-
-      return () => clearTimeout(timer)
-    }
-  }, [])
 
   const handleClose = () => {
     setIsOpen(false)
@@ -145,7 +133,6 @@ export default function PopupModal() {
                 ) : (
                   // ✅ SUCCESS SCREEN
                   <div className="flex flex-col items-center justify-center text-center h-[350px]">
-                    
                     <div className="text-green-400 text-5xl mb-4">✓</div>
 
                     <h2 className="text-2xl font-bold text-white mb-2">
@@ -153,7 +140,7 @@ export default function PopupModal() {
                     </h2>
 
                     <p className="text-gray-400 text-sm max-w-[300px]">
-                      Your details have been submitted successfully.  
+                      Your details have been submitted successfully.   
                       Our team will get in touch with you within 24 hours.
                     </p>
 

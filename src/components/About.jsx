@@ -159,12 +159,12 @@ export default function About() {
             </div>
             
             <div className="p-6 rounded-2xl bg-gradient-to-br from-pink-900/30 to-rose-900/20 border border-pink-800/30 backdrop-blur-sm">
-              <div className="text-4xl font-bold text-pink-400 mb-2">50+</div>
+              <div className="text-4xl font-bold text-pink-400 mb-2">30+</div>
               <div className="text-blue-200">Projects Delivered</div>
             </div>
             
             <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-900/30 to-violet-900/20 border border-purple-800/30 backdrop-blur-sm">
-              <div className="text-4xl font-bold text-purple-400 mb-2">30+</div>
+              <div className="text-4xl font-bold text-purple-400 mb-2">15+</div>
               <div className="text-blue-200">Happy Clients</div>
             </div>
           </motion.div>

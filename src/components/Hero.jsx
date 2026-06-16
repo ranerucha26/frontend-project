@@ -80,7 +80,7 @@ const TechEcosystem = () => {
   const [hoveredNode, setHoveredNode] = useState(null);
 
   return (
-    <div className="relative w-full max-w-[550px] aspect-square flex items-center justify-center">
+    <div className="relative w-full max-w-[550px] min-h-[320px] md:aspect-square md:max-h-[60vh] flex items-center justify-center overflow-visible">
       {/* Dynamic Background Blur Glow */}
       <motion.div 
         animate={{ scale: [0.9, 1.1, 0.9], opacity: [0.15, 0.25, 0.15] }}
@@ -233,7 +233,7 @@ const TechEcosystem = () => {
 
 export default function Hero() {
   return (
-    <section id="home" className="relative h-screen w-full overflow-hidden bg-[#f8fafc]">
+    <section id="home" className="relative min-h-screen w-full overflow-visible md:overflow-hidden bg-[#f8fafc] pt-24 md:pt-0">
       {/* Background Interactive Elements */}
       <CanvasBackground />
 
@@ -248,21 +248,11 @@ export default function Hero() {
       </svg>
 
       {/* Main Structural Layout Assembly */}
-      <div className="relative z-10 h-full max-w-7xl mx-auto px-6 lg:px-12 flex items-center w-full pt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center w-full">
+      <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 md:px-6 lg:px-12 flex items-center w-full md:pt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center w-full">
           
           {/* LEFT COLUMN ── Text Content Blocks */}
-          <div className="flex flex-col text-left order-2 lg:order-1 max-w-xl">
-            <motion.p
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              custom={0.05}
-              className="inline-block w-fit text-cyan-600 text-xs md:text-sm font-bold uppercase tracking-[0.12em] mb-4 bg-cyan-50 px-3 py-1.5 rounded-full border border-cyan-200"
-            >
-              Sapphire Infotech Solutions
-            </motion.p>
-
+          <div className="flex flex-col text-left order-1 lg:order-1 max-w-xl pt-4 md:pt-0">
             <motion.h1
               variants={fadeUp}
               initial="hidden"
@@ -307,7 +297,7 @@ export default function Hero() {
           </div>
 
           {/* RIGHT COLUMN ── Premium Vector Illustration Display */}
-          <div className="flex justify-center items-center order-1 lg:order-2 w-full">
+          <div className="flex justify-center items-center order-2 lg:order-2 w-full mt-2 md:mt-0">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}

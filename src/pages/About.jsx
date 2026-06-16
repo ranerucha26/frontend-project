@@ -123,9 +123,9 @@ export default function About() {
   const statCards = [
     {
       id: 1,
-      number: '1+',
+      number: '3+',
       label: 'Years of Excellence',
-      sublabel: 'Building digital products since 2026',
+      sublabel: 'Building digital products since 2020',
       icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z',
       from: '#0284c7',
       to: '#2563eb',
@@ -136,7 +136,7 @@ export default function About() {
     },
     {
       id: 2,
-      number: '25+',
+      number: '30+',
       label: 'Projects Delivered',
       sublabel: 'Across web, mobile and enterprise',
       icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
@@ -149,7 +149,7 @@ export default function About() {
     },
     {
       id: 3,
-      number: '15+',
+      number: '50+',
       label: 'Happy Clients',
       sublabel: 'Trusted by startups & enterprises',
       icon: 'M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
@@ -182,6 +182,7 @@ export default function About() {
       icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
       accent: 'from-cyan-500 to-blue-600',
       color: 'rgba(6,182,212,0.8)',
+      glowColor: 'rgba(6,182,212,0.06)',
       side: 'left',
     },
     {
@@ -190,6 +191,7 @@ export default function About() {
       icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z',
       accent: 'from-violet-500 to-purple-600',
       color: 'rgba(124,58,237,0.8)',
+      glowColor: 'rgba(124,58,237,0.06)',
       side: 'right',
     },
     {
@@ -198,6 +200,7 @@ export default function About() {
       icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z',
       accent: 'from-emerald-500 to-teal-600',
       color: 'rgba(16,185,129,0.8)',
+      glowColor: 'rgba(16,185,129,0.06)',
       side: 'left',
     },
     {
@@ -206,6 +209,7 @@ export default function About() {
       icon: 'M13 10V3L4 14h7v7l9-11h-7z',
       accent: 'from-amber-500 to-orange-600',
       color: 'rgba(217,119,6,0.8)',
+      glowColor: 'rgba(217,119,6,0.06)',
       side: 'right',
     },
     {
@@ -214,6 +218,7 @@ export default function About() {
       icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
       accent: 'from-rose-500 to-pink-600',
       color: 'rgba(225,29,72,0.8)',
+      glowColor: 'rgba(225,29,72,0.06)',
       side: 'left',
     },
     {
@@ -222,6 +227,7 @@ export default function About() {
       icon: 'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z',
       accent: 'from-sky-500 to-indigo-600',
       color: 'rgba(14,165,233,0.8)',
+      glowColor: 'rgba(14,165,233,0.06)',
       side: 'right',
     },
   ]
@@ -274,7 +280,7 @@ export default function About() {
                 </p>
 
                 <p className="text-slate-600 text-lg leading-relaxed font-medium">
-                  Founded in 2026, we've grown from a small startup to a leading digital agency, working with clients ranging from innovative startups to enterprise leaders. Our approach combines technical expertise with creative vision to deliver solutions that not only meet but exceed expectations.
+                  Founded in 2022, we've grown from a small startup to a leading digital agency, working with clients ranging from innovative startups to enterprise leaders. Our approach combines technical expertise with creative vision to deliver solutions that not only meet but exceed expectations.
                 </p>
 
                 <div className="space-y-3 pt-6">
@@ -314,7 +320,7 @@ export default function About() {
                     </svg>
                   </div>
                   
-                  <div className="relative z-10 text-4xl font-black text-slate-900 mb-2 tracking-tight">25+</div>
+                  <div className="relative z-10 text-4xl font-black text-slate-900 mb-2 tracking-tight">30+</div>
                   <div className="relative z-10 text-sm text-slate-600 font-bold">Expert Team Members</div>
                 </motion.div>
 
@@ -330,11 +336,11 @@ export default function About() {
                   
                   <div className="relative w-14 h-14 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center mb-6 group-hover:border-indigo-400 transition-colors duration-500">
                     <svg className="w-7 h-7 text-indigo-500 relative z-10 transition-transform duration-500 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138z" />
                     </svg>
                   </div>
                   
-                  <div className="relative z-10 text-4xl font-black text-slate-900 mb-2 tracking-tight">1+</div>
+                  <div className="relative z-10 text-4xl font-black text-slate-900 mb-2 tracking-tight">3+</div>
                   <div className="relative z-10 text-sm text-slate-600 font-bold">Years of Experience</div>
                 </motion.div>
 
@@ -374,7 +380,7 @@ export default function About() {
                     </svg>
                   </div>
                   
-                  <div className="relative z-10 text-4xl font-black text-slate-900 mb-2 tracking-tight">15+</div>
+                  <div className="relative z-10 text-4xl font-black text-slate-900 mb-2 tracking-tight">50+</div>
                   <div className="relative z-10 text-sm text-slate-600 font-bold">Happy Clients</div>
                 </motion.div>
               </div>
@@ -411,7 +417,7 @@ export default function About() {
             />
             
             <div className="pl-10 md:pl-16 relative">
-              <div className="absolute -top-10 -left-2 text-[8rem] text-blue-500/10 font-serif leading-none pointer-events-none select-none">"</div>
+              <div className="absolute -top-10 -left-2 text-[8rem] text-blue-500/10 font-serif font-bold leading-none pointer-events-none select-none">"</div>
 
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
@@ -468,14 +474,17 @@ export default function About() {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   className="group relative flex items-center"
                 >
-                  <div
-                    className="relative w-full p-6 rounded-2xl bg-white border border-slate-200 shadow-sm transition-all duration-500 overflow-hidden cursor-pointer"
+                  <motion.div
+                    className="relative w-full p-6 rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden cursor-pointer"
                     style={{ boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}
-                    onMouseEnter={e => { e.currentTarget.style.borderColor = value.color; e.currentTarget.style.boxShadow = `0 10px 30px ${value.color.replace('0.8','0.08')}` }}
-                    onMouseLeave={e => { e.currentTarget.style.borderColor = '#e2e8f0'; e.currentTarget.style.boxShadow = 'none' }}
+                    whileHover={{ 
+                      borderColor: value.color, 
+                      boxShadow: `0 10px 30px ${value.glowColor}` 
+                    }}
+                    transition={{ duration: 0.3 }}
                   >
                     <div className="flex justify-center mb-3">
-                      <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: value.color.replace('0.8','0.1'), border: `1px solid ${value.color.replace('0.8','0.2')}` }}>
+                      <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: value.glowColor, border: `1px solid ${value.color}` }}>
                         <svg className="w-5 h-5" style={{ color: value.color }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d={value.icon} />
                         </svg>
@@ -483,7 +492,7 @@ export default function About() {
                     </div>
                     <h3 className="text-slate-900 font-bold text-lg text-center mb-2">{value.title}</h3>
                     <p className="text-slate-600 text-sm text-center leading-relaxed font-normal">{value.description}</p>
-                  </div>
+                  </motion.div>
 
                   <div className="hidden md:flex absolute -right-8 top-1/2 -translate-y-1/2 items-center">
                     <div className="w-8 border-t-2 border-dashed border-slate-300" />
@@ -523,14 +532,17 @@ export default function About() {
                     <div className="w-8 border-t-2 border-dashed border-slate-300" />
                   </div>
 
-                  <div
-                    className="relative w-full p-6 rounded-2xl bg-white border border-slate-200 shadow-sm transition-all duration-500 overflow-hidden cursor-pointer"
+                  <motion.div
+                    className="relative w-full p-6 rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden cursor-pointer"
                     style={{ boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)' }}
-                    onMouseEnter={e => { e.currentTarget.style.borderColor = value.color; e.currentTarget.style.boxShadow = `0 10px 30px ${value.color.replace('0.8','0.08')}` }}
-                    onMouseLeave={e => { e.currentTarget.style.borderColor = '#e2e8f0'; e.currentTarget.style.boxShadow = 'none' }}
+                    whileHover={{ 
+                      borderColor: value.color, 
+                      boxShadow: `0 10px 30px ${value.glowColor}` 
+                    }}
+                    transition={{ duration: 0.3 }}
                   >
                     <div className="flex justify-center mb-3">
-                      <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: value.color.replace('0.8','0.1'), border: `1px solid ${value.color.replace('0.8','0.2')}` }}>
+                      <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: value.glowColor, border: `1px solid ${value.color}` }}>
                         <svg className="w-5 h-5" style={{ color: value.color }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d={value.icon} />
                         </svg>
@@ -538,7 +550,7 @@ export default function About() {
                     </div>
                     <h3 className="text-slate-900 font-bold text-lg text-center mb-2">{value.title}</h3>
                     <p className="text-slate-600 text-sm text-center leading-relaxed font-normal">{value.description}</p>
-                  </div>
+                  </motion.div>
                 </motion.div>
               ))}
             </div>
@@ -622,123 +634,35 @@ export default function About() {
 
       {/* ===== STORY SECTION ===== */}
       <section ref={storyRef} className="relative py-20 md:py-28 bg-[#f8fafc]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            
-            {/* Left Column - Text */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              animate={isStoryInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
-              transition={{ duration: 0.8 }}
-              className="relative pl-8 md:pl-12"
-            >
-              <motion.div 
-                initial={{ height: 0 }}
-                animate={isStoryInView ? { height: '100%' } : { height: 0 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-                className="absolute left-0 top-0 w-[2px] bg-gradient-to-b from-blue-500 via-cyan-500 to-transparent" 
-              />
-              <div className="absolute left-[-5px] top-0 w-3 h-3 rounded-full bg-blue-500" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center text-center">
+          
+          {/* Centered Single Column Text Layout */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={isStoryInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+            transition={{ duration: 0.8 }}
+            className="relative max-w-3xl mx-auto"
+          >
+            <p className="text-sm font-bold tracking-[0.3em] text-blue-600 uppercase mb-4">
+              How It Started
+            </p>
+            <h2 className="text-4xl md:text-5xl font-black mb-8 text-slate-900 leading-tight">
+              Our <span style={{ backgroundImage: 'linear-gradient(to right, #0891b2, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Story</span>
+            </h2>
 
-              <p className="text-sm font-bold tracking-[0.3em] text-blue-600 uppercase mb-4">
-                How It Started
+            <div className="space-y-6 text-slate-600 font-medium leading-relaxed">
+              <p>
+                Founded in <span className="text-slate-900 font-bold">2022</span> by a group of passionate developers and designers, Sapphire Infotech Solutions began with a simple vision: to craft high-performance digital experiences that truly matter to the people who use them.
               </p>
-              <h2 className="text-4xl md:text-5xl font-black mb-8 text-slate-900 leading-tight">
-                Our <span style={{ backgroundImage: 'linear-gradient(to right, #0891b2, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Story</span>
-              </h2>
+              <p>
+                In just <span className="text-blue-600 font-bold">3+ years</span>, we've grown into a dynamic studio of <span className="text-slate-900 font-bold">30+ expert professionals</span> — developers, designers, and strategists — all united by an unwavering commitment to excellence and innovation.
+              </p>
+              <p>
+                Today, we've delivered <span className="text-slate-900 font-bold">30+ successful projects</span> for <span className="text-slate-900 font-bold">50+ happy clients</span> across <span className="text-slate-900 font-bold">2+ countries served</span>, helping businesses of all sizes transform their digital infrastructure.
+              </p>
+            </div>
+          </motion.div>
 
-              <div className="space-y-6 text-slate-600 font-medium leading-relaxed">
-                <p>
-                  Founded in <span className="text-slate-900 font-bold">2026</span> by a group of passionate developers and designers, Sapphire Infotech Solutions began with a simple vision: to craft high-performance digital experiences that truly matter to the people who use them.
-                </p>
-                <p>
-                  In just <span className="text-blue-600 font-bold">1+ years</span>, we've grown into a dynamic studio of <span className="text-slate-900 font-bold">25+ expert professionals</span> — developers, designers, and strategists — all united by an unwavering commitment to excellence and innovation.
-                </p>
-                <p>
-                  Today, we've delivered <span className="text-slate-900 font-bold">25+ successful projects</span> for <span className="text-slate-900 font-bold">15+ happy clients</span> across <span className="text-slate-900 font-bold">2+ countries</span>, helping businesses of all sizes transform their digital infrastructure.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Right Column - Premium Abstract Graphic */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={isStoryInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
-              transition={{ duration: 0.8 }}
-              className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square flex items-center justify-center"
-            >
-              <div className="relative w-full h-full max-w-lg">
-                
-                {/* Back card */}
-                <motion.div 
-                  className="absolute top-[10%] right-[5%] w-[60%] h-[70%] rounded-3xl overflow-hidden bg-slate-50 border border-slate-200 shadow-sm"
-                  animate={{ y: [0, -15, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-                >
-                  <div className="p-6 h-full flex flex-col gap-3 opacity-40">
-                    <div className="w-full h-3 rounded bg-slate-300" />
-                    <div className="w-3/4 h-3 rounded bg-slate-300" />
-                    <div className="w-5/6 h-3 rounded bg-slate-300" />
-                    <div className="mt-4 w-full h-32 rounded bg-gradient-to-br from-blue-500/10 to-transparent border border-blue-500/10" />
-                  </div>
-                </motion.div>
-
-                {/* Front card */}
-                <motion.div 
-                  className="absolute bottom-[10%] left-[5%] w-[65%] h-[60%] rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl"
-                  animate={{ y: [0, 15, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                >
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-cyan-500" />
-                  
-                  <div className="p-6 h-full flex flex-col">
-                    <div className="flex items-center justify-between mb-8">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100">
-                          <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                          </svg>
-                        </div>
-                        <div>
-                          <div className="text-slate-900 font-extrabold">Growth Scale</div>
-                          <div className="text-slate-500 text-xs font-bold">2022 - Present</div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Abstract Graph */}
-                    <div className="flex-1 flex items-end gap-2 px-2">
-                      <motion.div className="w-1/5 bg-slate-200 rounded-t-sm" initial={{ height: 0 }} animate={isStoryInView ? { height: '30%' } : { height: 0 }} transition={{ duration: 1, delay: 0.5 }} />
-                      <motion.div className="w-1/5 bg-slate-300 rounded-t-sm" initial={{ height: 0 }} animate={isStoryInView ? { height: '45%' } : { height: 0 }} transition={{ duration: 1, delay: 0.7 }} />
-                      <motion.div className="w-1/5 bg-blue-400/60 rounded-t-sm" initial={{ height: 0 }} animate={isStoryInView ? { height: '65%' } : { height: 0 }} transition={{ duration: 1, delay: 0.9 }} />
-                      <motion.div className="w-1/5 bg-blue-500/80 rounded-t-sm" initial={{ height: 0 }} animate={isStoryInView ? { height: '85%' } : { height: 0 }} transition={{ duration: 1, delay: 1.1 }} />
-                      <motion.div className="w-1/5 bg-cyan-500 rounded-t-sm shadow-md" initial={{ height: 0 }} animate={isStoryInView ? { height: '100%' } : { height: 0 }} transition={{ duration: 1, delay: 1.3 }} />
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Floating UI Badges */}
-                <motion.div 
-                  className="absolute top-[30%] left-[-5%] px-4 py-3 rounded-xl bg-white border border-slate-200 flex items-center gap-3 shadow-lg"
-                  animate={{ x: [0, 10, 0], y: [0, -5, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-                >
-                  <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
-                  <div className="text-slate-800 text-sm font-bold">Systems Operational</div>
-                </motion.div>
-
-                <motion.div 
-                  className="absolute bottom-[25%] right-[-5%] px-5 py-4 rounded-xl bg-white border border-slate-200 shadow-lg text-center"
-                  animate={{ x: [0, -10, 0], y: [0, 10, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-                >
-                  <div className="text-2xl font-black text-slate-900 mb-0.5">500+</div>
-                  <div className="text-blue-600 text-[10px] font-bold tracking-wider uppercase">Global Clients</div>
-                </motion.div>
-
-              </div>
-            </motion.div>
-          </div>
         </div>
       </section>
 
