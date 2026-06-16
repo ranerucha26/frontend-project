@@ -154,12 +154,12 @@ export default function About() {
             className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16"
           >
             <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-900/30 to-cyan-900/20 border border-blue-800/30 backdrop-blur-sm">
-              <div className="text-4xl font-bold text-cyan-400 mb-2">5+</div>
+              <div className="text-4xl font-bold text-cyan-400 mb-2">3+</div>
               <div className="text-blue-200">Years Experience</div>
             </div>
             
             <div className="p-6 rounded-2xl bg-gradient-to-br from-pink-900/30 to-rose-900/20 border border-pink-800/30 backdrop-blur-sm">
-              <div className="text-4xl font-bold text-pink-400 mb-2">30+</div>
+              <div className="text-4xl font-bold text-pink-400 mb-2">20+</div>
               <div className="text-blue-200">Projects Delivered</div>
             </div>
             
@@ -186,18 +186,18 @@ export default function About() {
 
         {/* SECTION 2 - MAIN CONTENT */}
         <div className="max-w-7xl mx-auto px-8 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-            {/* Left Column (60%) */}
-            <div className="lg:col-span-3">
+          <div className="flex flex-col items-center justify-center text-center">
+            {/* Main Story Text Container Centered */}
+            <div className="w-full max-w-3xl mx-auto">
               <motion.div
                 variants={fadeUp}
                 initial="hidden"
                 animate="visible"
-                className="space-y-8"
+                className="space-y-8 flex flex-col items-center"
               >
                 {/* Heading */}
                 <h2 className="text-white text-4xl font-bold">
-                  About Sapphire Infotech Solutions
+                  Our Story
                 </h2>
 
                 {/* Paragraph 1 */}
@@ -207,11 +207,11 @@ export default function About() {
 
                 {/* Paragraph 2 */}
                 <p className="text-blue-100 text-lg leading-relaxed">
-                  Founded in 2026, we've grown from a small startup to a leading digital agency, working with clients ranging from innovative startups to Fortune 500 companies. Our approach combines technical expertise with creative vision to deliver solutions that not only meet but exceed expectations.
+                  Founded in 2022, we've grown from a small startup to a leading digital agency, working with clients ranging from innovative startups to Fortune 500 companies. Our approach combines technical expertise with creative vision to deliver solutions that not only meet but exceed expectations.
                 </p>
 
                 {/* Bullet Points */}
-                <div className="space-y-4 pt-4">
+                <div className="space-y-4 pt-4 w-full max-w-md mx-auto flex flex-col items-start pl-6">
                   {[
                     'Innovation-driven approach',
                     'Agile development methodology',
@@ -236,99 +236,6 @@ export default function About() {
                   ))}
                 </div>
               </motion.div>
-            </div>
-
-            {/* Right Column (40%) - Stat Cards Grid */}
-            <div className="lg:col-span-2">
-              <div className="grid grid-cols-2 gap-6">
-                {/* Card 1: People/Team */}
-                <motion.div
-                  variants={fadeUp}
-                  initial="hidden"
-                  animate="visible"
-                  custom={0.8}
-                  className="p-6 rounded-[12px] border border-blue-500/20"
-                  style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}
-                >
-                  <div className="flex flex-col items-center gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-pink-500 to-rose-500 flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                      </svg>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-white font-bold text-3xl">25+</div>
-                      <div className="text-gray-400 text-sm mt-1">Expert Team Members</div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Card 2: Lightbulb/Ideas */}
-                <motion.div
-                  variants={fadeUp}
-                  initial="hidden"
-                  animate="visible"
-                  custom={0.9}
-                  className="p-6 rounded-[12px] border border-blue-500/20"
-                  style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}
-                >
-                  <div className="flex flex-col items-center gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-purple-500 to-violet-500 flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-20C5.58 1 2 4.58 2 8c0 2.25 1.16 4.23 2.91 5.39.26 3.02 2.95 5.39 6.29 5.39s6.03-2.37 6.29-5.39C20.84 12.23 22 10.25 22 8c0-3.42-3.58-7-7-7zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z" />
-                      </svg>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-white font-bold text-3xl">1+</div>
-                      <div className="text-gray-400 text-sm mt-1">Years of Experience</div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Card 3: Globe/Countries */}
-                <motion.div
-                  variants={fadeUp}
-                  initial="hidden"
-                  animate="visible"
-                  custom={1.0}
-                  className="p-6 rounded-[12px] border border-blue-500/20"
-                  style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}
-                >
-                  <div className="flex flex-col items-center gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                      </svg>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-white font-bold text-3xl">2+</div>
-                      <div className="text-gray-400 text-sm mt-1">Countries Served</div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Card 4: Heart/Clients */}
-                <motion.div
-                  variants={fadeUp}
-                  initial="hidden"
-                  animate="visible"
-                  custom={1.1}
-                  className="p-6 rounded-[12px] border border-blue-500/20"
-                  style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}
-                >
-                  <div className="flex flex-col items-center gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-emerald-500 to-green-500 flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                      </svg>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-white font-bold text-3xl">500+</div>
-                      <div className="text-gray-400 text-sm mt-1">Happy Clients</div>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
             </div>
           </div>
         </div>

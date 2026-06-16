@@ -37,7 +37,7 @@ function AnimatedCounter({ from = 0, to, suffix = '' }) {
 
 const stats = [
   {
-    numericValue: 25,
+    numericValue: 30,
     suffix: '+',
     label: 'Expert Team Members',
     color: '59,130,246',
@@ -63,7 +63,7 @@ const stats = [
   },
 
   {
-    numericValue: 1,
+    numericValue: 3,
     suffix: '+',
     label: 'Years of Experience',
     color: '251,191,36',
@@ -356,7 +356,7 @@ export default function AboutPreview() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-[18px] text-gray-700 leading-[1.8] mb-[40px]"
             >
-              Founded in 2026, we've grown from a small startup to a
+              Founded in 2022, we've grown from a small startup to a
               leading digital agency working with clients worldwide.
             </motion.p>
 

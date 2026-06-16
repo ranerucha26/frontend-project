@@ -136,7 +136,7 @@ export default function About() {
     },
     {
       id: 2,
-      number: '30+',
+      number: '20+',
       label: 'Projects Delivered',
       sublabel: 'Across web, mobile and enterprise',
       icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
@@ -149,7 +149,7 @@ export default function About() {
     },
     {
       id: 3,
-      number: '50+',
+      number: '15+',
       label: 'Happy Clients',
       sublabel: 'Trusted by startups & enterprises',
       icon: 'M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
@@ -160,19 +160,7 @@ export default function About() {
       hoverBorder: 'rgba(8,145,178,0.4)',
       bar: 78,
     },
-    {
-      id: 4,
-      number: '2+',
-      label: 'Countries Served',
-      sublabel: 'Global reach across 4 continents',
-      icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
-      from: '#4f46e5',
-      to: '#7c3aed',
-      glow: 'rgba(79,70,229,0.08)',
-      border: '#e2e8f0',
-      hoverBorder: 'rgba(79,70,229,0.4)',
-      bar: 65,
-    },
+
   ]
 
   const values = [
@@ -344,25 +332,7 @@ export default function About() {
                   <div className="relative z-10 text-sm text-slate-600 font-bold">Years of Experience</div>
                 </motion.div>
 
-                {/* Card 3 */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  className="group relative p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-md overflow-hidden hover:border-cyan-500 transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/5"
-                  whileHover={{ y: -5 }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  <div className="relative w-14 h-14 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center mb-6 group-hover:border-cyan-500 transition-colors duration-500">
-                    <svg className="w-7 h-7 text-cyan-600 relative z-10 transition-transform duration-500 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  
-                  <div className="relative z-10 text-4xl font-black text-slate-900 mb-2 tracking-tight">2+</div>
-                  <div className="relative z-10 text-sm text-slate-600 font-bold">Countries Served</div>
-                </motion.div>
+
 
                 {/* Card 4 */}
                 <motion.div 
@@ -380,7 +350,7 @@ export default function About() {
                     </svg>
                   </div>
                   
-                  <div className="relative z-10 text-4xl font-black text-slate-900 mb-2 tracking-tight">50+</div>
+                  <div className="relative z-10 text-4xl font-black text-slate-900 mb-2 tracking-tight">15+</div>
                   <div className="relative z-10 text-sm text-slate-600 font-bold">Happy Clients</div>
                 </motion.div>
               </div>
@@ -658,7 +628,7 @@ export default function About() {
                 In just <span className="text-blue-600 font-bold">3+ years</span>, we've grown into a dynamic studio of <span className="text-slate-900 font-bold">30+ expert professionals</span> — developers, designers, and strategists — all united by an unwavering commitment to excellence and innovation.
               </p>
               <p>
-                Today, we've delivered <span className="text-slate-900 font-bold">30+ successful projects</span> for <span className="text-slate-900 font-bold">50+ happy clients</span> across <span className="text-slate-900 font-bold">2+ countries served</span>, helping businesses of all sizes transform their digital infrastructure.
+                Today, we've delivered <span className="text-slate-900 font-bold">20+ successful projects</span> for <span className="text-slate-900 font-bold">15+ happy clients</span>  helping businesses of all sizes transform their digital infrastructure.
               </p>
             </div>
           </motion.div>
