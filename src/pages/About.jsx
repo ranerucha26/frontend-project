@@ -403,7 +403,7 @@ export default function About() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isMissionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-xl md:text-2xl lg:text-3xl font-medium text-slate-700 leading-normal lg:leading-[1.5] max-w-4xl"
+                className="text-base md:text-lg lg:text-xl font-medium text-slate-700 leading-normal lg:leading-[1.5] max-w-4xl"
               >
                 To empower businesses with <span className="font-bold text-slate-900">innovative digital solutions</span> that not only meet their needs but <span style={{ backgroundImage: 'linear-gradient(to right, #0284c7, #2563eb, #7c3aed)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }} className="font-black">exceed their expectations</span> — delivering measurable growth through technology, creativity, and an unwavering commitment to excellence.
               </motion.p>
@@ -549,14 +549,14 @@ export default function About() {
           </motion.div>
 
           {/* Stats grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {statCards.map((card, index) => (
               <motion.div
                 key={card.id}
                 initial={{ opacity: 0, y: 40 }}
                 animate={isStatsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
                 transition={{ duration: 0.6, delay: index * 0.12 }}
-                className="group"
+                className="group w-full"
                 whileHover={{ y: -8 }}
               >
                 <div
@@ -603,7 +603,7 @@ export default function About() {
       <TechStack />
 
       {/* ===== STORY SECTION ===== */}
-      <section ref={storyRef} className="relative py-20 md:py-28 bg-[#f8fafc]">
+      <section ref={storyRef} className="relative pt-20 pb-0 md:pt-28 md:pb-4 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center text-center">
           
           {/* Centered Single Column Text Layout */}

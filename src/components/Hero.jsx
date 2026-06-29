@@ -80,7 +80,7 @@ const TechEcosystem = () => {
   const [hoveredNode, setHoveredNode] = useState(null);
 
   return (
-    <div className="relative w-full max-w-[550px] min-h-[320px] md:aspect-square md:max-h-[60vh] flex items-center justify-center overflow-visible">
+    <div className="relative w-full max-w-[420px] sm:max-w-[550px] aspect-square flex items-center justify-center overflow-visible">
       {/* Dynamic Background Blur Glow */}
       <motion.div 
         animate={{ scale: [0.9, 1.1, 0.9], opacity: [0.15, 0.25, 0.15] }}
@@ -233,7 +233,7 @@ const TechEcosystem = () => {
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen w-full overflow-visible md:overflow-hidden bg-[#f8fafc] pt-24 md:pt-0">
+    <section id="home" className="relative min-h-screen w-full overflow-visible md:overflow-hidden bg-[#f8fafc] pt-24 pb-12 md:pt-0 md:pb-0">
       {/* Background Interactive Elements */}
       <CanvasBackground />
 
@@ -297,12 +297,12 @@ export default function Hero() {
           </div>
 
           {/* RIGHT COLUMN ── Premium Vector Illustration Display */}
-          <div className="flex justify-center items-center order-2 lg:order-2 w-full mt-2 md:mt-0">
+          <div className="flex justify-center items-center order-2 lg:order-2 w-full -mt-4 md:mt-0">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
-              className="w-full flex justify-center"
+              className="w-full flex justify-center scale-[0.92] sm:scale-100 origin-top"
             >
               <TechEcosystem />
             </motion.div>

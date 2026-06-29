@@ -8,7 +8,7 @@ export default function TeamSpotlight() {
   const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   return (
-    <section ref={ref} className="relative py-[100px] bg-[#f8fafc] overflow-hidden">
+    <section ref={ref} className="relative pt-[60px] md:pt-[80px] pb-[100px] bg-[#f8fafc] overflow-hidden">
       {/* Background Pattern */}
       <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none" style={{ opacity: 0.06 }}>
         <defs>
@@ -27,7 +27,7 @@ export default function TeamSpotlight() {
           transition={{ duration: 0.6 }}
           className="text-center mb-[60px]"
         >
-          <h2 className="text-[56px] font-black tracking-tight">
+          <h2 className="text-[34px] sm:text-[56px] font-black tracking-tight whitespace-nowrap">
             <span className="text-slate-900">Meet Our </span>
             <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #0891b2, #2563eb, #7c3aed)' }}>
               Team
@@ -85,8 +85,8 @@ export default function TeamSpotlight() {
           </div>
 
           {/* Right: Info */}
-          <div className="w-full md:w-[60%] flex flex-col items-start">
-            <h3 className="text-[36px] md:text-[44px] font-extrabold mb-[16px] text-slate-900">
+          <div className="w-full md:w-[60%] flex flex-col items-center text-center md:items-start md:text-left">
+            <h3 className="text-[26px] sm:text-[32px] md:text-[44px] font-extrabold mb-[16px] text-slate-900 whitespace-nowrap">
               <span>Meet Our </span>
               <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #2563eb, #1d4ed8)' }}>
                 Founder
@@ -101,7 +101,7 @@ export default function TeamSpotlight() {
               Abhinav is an entrepreneur and visionary leader who founded Sapphire Infotech Solutions with a mission to revolutionize maritime services and digital solutions. With expertise in AI, machine learning, and business development, he has successfully built and scaled Sapphire Infotech Solutions to establish connections across marine institutes, RPSL companies, and maritime organizations. His innovative approach combines technical acumen with strategic business management, driving the company's growth in specialized maritime training and digital fintech services. As Director of HPAY, he continues to expand the digital ecosystem, leveraging technology to solve complex industry challenges.
             </p>
 
-            <div className="flex flex-wrap gap-[12px] mb-[24px]">
+            <div className="flex flex-wrap justify-center md:justify-start gap-[12px] mb-[24px]">
               {['AI & Machine Learning', 'Maritime Industry', 'Fintech', 'Business Development', 'Leadership'].map((skill, i) => (
                 <motion.div 
                   initial={{ opacity: 0 }} 
@@ -183,8 +183,8 @@ export default function TeamSpotlight() {
           </div>
 
           {/* Right: Info */}
-          <div className="w-full md:w-[60%] flex flex-col items-start">
-            <h3 className="text-[36px] md:text-[44px] font-extrabold mb-[16px] text-slate-900">
+          <div className="w-full md:w-[60%] flex flex-col items-center text-center md:items-start md:text-left">
+            <h3 className="text-[26px] sm:text-[32px] md:text-[44px] font-extrabold mb-[16px] text-slate-900 whitespace-nowrap">
               <span>Meet Our </span>
               <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #0891b2, #0284c7)' }}>
                 Technical Head
@@ -199,7 +199,7 @@ export default function TeamSpotlight() {
             Suraj Sahani is a passionate Full Stack Developer, Software Engineer, and IT Educator with extensive experience in both industry projects and technical training. Since beginning his programming journey in 2020, he has built scalable web applications using modern technologies such as React.js, Next.js, Node.js, NestJS, Spring Boot, Django, PostgreSQL, MongoDB, and cloud-based solutions. Currently working as a Full Stack Developer, he has successfully delivered full-stack applications while also exploring AI/ML domains including predictive analytics and computer vision. Beyond development, Suraj has trained over 1,000 students through organizations such as LetsUpgrade, ITM Skills University, and Disha Computer Institute. With 1,000+ coding problems solved across competitive programming platforms, he combines strong problem-solving skills, technical leadership, and a passion for mentorship to bridge the gap between learning and real-world software development.
             </p>
 
-            <div className="flex flex-wrap gap-[12px] mb-[24px]">
+            <div className="flex flex-wrap justify-center md:justify-start gap-[12px] mb-[24px]">
               {['React.js', 'Node.js', 'Next.js', 'Django', 'PostgreSQL', 'MongoDB', 'Nest.js', 'Tailwind CSS', 'JavaScript', 'Spring Boot'].map((tech, i) => (
                 <motion.div 
                   initial={{ opacity: 0 }} 

@@ -130,7 +130,7 @@ export default function CTA() {
         <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-[60px] items-start">
 
           {/* LEFT */}
-          <div className="w-full flex flex-col justify-center h-full">
+          <div className="w-full flex flex-col justify-center items-center h-full text-center">
 
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -161,7 +161,7 @@ export default function CTA() {
                 </div>
               </h2>
 
-              <p className="text-[16px] text-gray-600 leading-[1.8] mb-[40px] max-w-lg">
+              <p className="text-[16px] text-gray-600 leading-[1.8] mb-[40px] max-w-lg mx-auto">
                 Let's discuss how our expert team and
                 cutting-edge solutions can help your business
                 scale to new heights.
@@ -178,7 +178,7 @@ export default function CTA() {
                 ease: 'easeOut',
               }}
 
-              className="flex flex-wrap gap-[24px] xl:gap-[30px] mb-[40px]"
+              className="flex flex-wrap justify-center gap-[24px] xl:gap-[30px] mb-[40px]"
             >
               {trustIndicators.map((item, idx) => (
                 <div key={idx} className="flex items-center gap-2">
@@ -201,7 +201,7 @@ export default function CTA() {
                 ease: 'easeOut',
               }}
 
-              className="flex justify-between items-center w-full max-w-lg pt-[24px] border-t border-blue-100"
+              className="flex justify-between items-center w-full max-w-lg mx-auto pt-[24px] border-t border-blue-100"
             >
               {stats.map((stat, idx) => (
                 <div

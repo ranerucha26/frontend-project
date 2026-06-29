@@ -1,9 +1,9 @@
-footer
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import logo from '../assets/logo.jpeg'
 
 export default function Footer() {
+  const { pathname } = useLocation()
   const currentYear = new Date().getFullYear()
 
    const socialLinks = [
@@ -44,8 +44,15 @@ export default function Footer() {
     },
   }
 
+  const handleSameRouteClick = (to) => (e) => {
+    if (to === pathname) {
+      e.preventDefault()
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
   return (
-    <footer className="relative bg-gradient-to-b from-white to-blue-50 border-t border-gray-200 mt-20">
+    <footer className="relative z-10 bg-gradient-to-b from-white to-blue-50 border-t border-gray-200 mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
 
         <motion.div
@@ -89,9 +96,9 @@ export default function Footer() {
             </h4>
 
             <ul className="space-y-3 font-semibold">
-              <li><Link to="/" className="text-slate-600 hover:text-blue-600 text-sm">Home</Link></li>
-              <li><Link to="/about" className="text-slate-600 hover:text-blue-600 text-sm">About</Link></li>
-              <li><Link to="/services" className="text-slate-600 hover:text-blue-600 text-sm">Services</Link></li>
+              <li><Link to="/" onClick={handleSameRouteClick('/')} className="inline-flex py-1 text-slate-600 hover:text-blue-600 active:text-blue-700 text-sm touch-manipulation">Home</Link></li>
+              <li><Link to="/about" onClick={handleSameRouteClick('/about')} className="inline-flex py-1 text-slate-600 hover:text-blue-600 active:text-blue-700 text-sm touch-manipulation">About</Link></li>
+              <li><Link to="/services" onClick={handleSameRouteClick('/services')} className="inline-flex py-1 text-slate-600 hover:text-blue-600 active:text-blue-700 text-sm touch-manipulation">Services</Link></li>
             </ul>
           </motion.div>
 
@@ -102,10 +109,10 @@ export default function Footer() {
             </h4>
 
             <ul className="space-y-3 font-semibold">
-              <li><Link to="/testimonials" className="text-slate-600 hover:text-blue-600 text-sm">Testimonials</Link></li>
-              <li><Link to="/contact" className="text-slate-600 hover:text-blue-600 text-sm">Contact</Link></li>
-              <li><Link to="/privacy-policy" className="text-slate-600 hover:text-blue-600 text-sm">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="text-slate-600 hover:text-blue-600 text-sm">Terms</Link></li>
+              <li><Link to="/testimonials" onClick={handleSameRouteClick('/testimonials')} className="inline-flex py-1 text-slate-600 hover:text-blue-600 active:text-blue-700 text-sm touch-manipulation">Testimonials</Link></li>
+              <li><Link to="/contact" onClick={handleSameRouteClick('/contact')} className="inline-flex py-1 text-slate-600 hover:text-blue-600 active:text-blue-700 text-sm touch-manipulation">Contact</Link></li>
+              <li><Link to="/privacy-policy" onClick={handleSameRouteClick('/privacy-policy')} className="inline-flex py-1 text-slate-600 hover:text-blue-600 active:text-blue-700 text-sm touch-manipulation">Privacy Policy</Link></li>
+              <li><Link to="/terms" onClick={handleSameRouteClick('/terms')} className="inline-flex py-1 text-slate-600 hover:text-blue-600 active:text-blue-700 text-sm touch-manipulation">Terms</Link></li>
             </ul>
           </motion.div>
 
@@ -124,7 +131,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center hover:border-blue-600 transition-colors"
+                  className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center transition-all hover:border-blue-600 hover:bg-blue-50 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 touch-manipulation"
                 >
                   {social.icon}
                 </a>
