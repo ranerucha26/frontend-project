@@ -1,3 +1,4 @@
+
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -143,12 +144,23 @@ function ServiceCard({ service, index }) {
   )
 }
 
+
+
+
+
+
 export default function ServicesPreview() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   return (
-    <section ref={ref} className="relative py-24 bg-[#f8fafc] overflow-hidden">
+    <section
+      id="services"
+      ref={ref}
+      className="relative py-24 bg-[#f8fafc] overflow-hidden scroll-mt-24"
+    >
+   
+
       {/* Dot grid */}
       <svg className="absolute inset-0 w-full h-full z-0" style={{ opacity: 0.06 }}>
         <defs>
@@ -158,6 +170,11 @@ export default function ServicesPreview() {
         </defs>
         <rect width="100%" height="100%" fill="url(#dotSvc)" />
       </svg>
+
+    
+   
+
+
 
       {/* Glows */}
       <div className="absolute inset-0 pointer-events-none">

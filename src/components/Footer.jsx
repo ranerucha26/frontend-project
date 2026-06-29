@@ -1,10 +1,40 @@
+footer
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import logo from '../assets/logo.jpeg' // ✅ add this
+import logo from '../assets/logo.jpeg'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
+   const socialLinks = [
+    {
+      label: 'YouTube',
+      href: 'https://www.youtube.com/@sapphire-infotech-solutions',
+      icon: (
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="#FF0000" aria-hidden="true">
+          <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" />
+        </svg>
+      ),
+    },
+    {
+      label: 'Instagram',
+      href: 'https://www.instagram.com/sapphire.infotech.solutions/',
+      icon: (
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="#E4405F" aria-hidden="true">
+          <path d="M12 2.2c2.7 0 3 0 4.1.1 1 .1 1.6.3 2 .5.5.2.9.5 1.3.9.4.4.7.8.9 1.3.2.4.4 1 .5 2 .1 1.1.1 1.4.1 4.1s0 3-.1 4.1c-.1 1-.3 1.6-.5 2-.2.5-.5.9-.9 1.3-.4.4-.8.7-1.3.9-.4.2-1 .4-2 .5-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1-.1-1.6-.3-2-.5-.5-.2-.9-.5-1.3-.9-.4-.4-.7-.8-.9-1.3-.2-.4-.4-1-.5-2-.1-1.1-.1-1.4-.1-4.1s0-3 .1-4.1c.1-1 .3-1.6.5-2 .2-.5.5-.9.9-1.3.4-.4.8-.7 1.3-.9.4-.2 1-.4 2-.5 1.1-.1 1.4-.1 4.1-.1zm0 1.8c-2.6 0-2.9 0-4 .1-.9 0-1.4.2-1.7.3-.4.2-.7.4-1 .7-.3.3-.5.6-.7 1-.1.3-.3.8-.3 1.7-.1 1.1-.1 1.4-.1 4s0 2.9.1 4c0 .9.2 1.4.3 1.7.2.4.4.7.7 1 .3.3.6.5 1 .7.3.1.8.3 1.7.3 1.1.1 1.4.1 4 .1s2.9 0 4-.1c.9 0 1.4-.2 1.7-.3.4-.2.7-.4 1-.7.3-.3.5-.6.7-1 .1-.3.3-.8.3-1.7.1-1.1.1-1.4.1-4s0-2.9-.1-4c0-.9-.2-1.4-.3-1.7-.2-.4-.4-.7-.7-1-.3-.3-.6-.5-1-.7-.3-.1-.8-.3-1.7-.3-1.1-.1-1.4-.1-4-.1zm0 3.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6zm0 1.8a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.2-3.1a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0z" />
+        </svg>
+      ),
+    },
+    {
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/company/sapphire-infotech-solutions/',
+      icon: (
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="#0A66C2" aria-hidden="true">
+          <path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3v9zM6.5 8.3A1.8 1.8 0 1 1 6.5 5a1.8 1.8 0 0 1 0 3.6zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V19h-3v-9h2.9v1.2h.04c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.7 2 3.7 4.6V19z" />
+        </svg>
+      ),
+    },
+  ]
   const fadeUp = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -30,11 +60,9 @@ export default function Footer() {
           className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12"
         >
 
-          {/* ✅ BRAND SECTION */}
+          {/* BRAND SECTION */}
           <motion.div variants={fadeUp} className="md:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-4">
-
-              {/* ✅ REAL LOGO */}
               <motion.img
                 src={logo}
                 alt="Sapphire Infotech Solutions logo — software company Mumbai"
@@ -87,10 +115,20 @@ export default function Footer() {
               Connect
             </h4>
 
-            <div className="flex gap-4">
-              <a className="w-10 h-10 rounded-xl bg-white border flex items-center justify-center">f</a>
-              <a className="w-10 h-10 rounded-xl bg-white border flex items-center justify-center">𝕏</a>
-              <a className="w-10 h-10 rounded-xl bg-white border flex items-center justify-center">in</a>
+            
+                          <div className="flex gap-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center hover:border-blue-600 transition-colors"
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </motion.div>
 
