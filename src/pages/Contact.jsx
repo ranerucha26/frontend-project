@@ -40,7 +40,7 @@ export default function Contact() {
         />
 
         {/* Header */}
-        <section className="relative z-10 py-20 md:py-32 pt-32">
+        <section className="relative z-10 pt-32 pb-10 md:pb-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -87,7 +87,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8"
+              className="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-8"
             >
               {[
                 { icon: '📧', title: 'Email', value: 'hello@sapphireinfotech.com' },
@@ -100,7 +100,7 @@ export default function Contact() {
                 >
                   <div className="text-4xl mb-3">{item.icon}</div>
                   <h4 className="text-slate-900 font-bold text-lg mb-1">{item.title}</h4>
-                  <p className="text-slate-600 font-medium text-sm">{item.value}</p>
+                  <p className="text-slate-600 font-medium text-sm break-all leading-snug">{item.value}</p>
                 </div>
               ))}
             </motion.div>

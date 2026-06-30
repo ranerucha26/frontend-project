@@ -412,7 +412,7 @@ const TimelineProcess = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, delay: index * 0.15 }}
-            className={`relative flex items-center mb-16 md:mb-24 ${
+            className={`relative flex items-center mb-10 md:mb-10 ${
               isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
             } flex-row`}
           >
@@ -630,7 +630,7 @@ export default function Services() {
               position: 'relative', zIndex: 10,
               display: 'flex',
               alignItems: 'center',
-              gap: '60px',
+              gap: '32px',
               flexWrap: 'wrap',
             }}
           >
@@ -639,6 +639,7 @@ export default function Services() {
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.85, ease: 'easeOut' }}
+              className="text-center flex flex-col items-center"
               style={{ flex: '3 1 340px', minWidth: 0 }}
             >
               <h1 style={{
@@ -661,13 +662,15 @@ export default function Services() {
 
               <div style={{
                 position: 'relative',
-                borderLeft: '5px solid #2563EB',
-                paddingLeft: '24px',
+                borderTop: '5px solid #2563EB',
+                paddingLeft: '0',
                 paddingTop: '8px',
                 paddingBottom: '8px',
                 maxWidth: '650px',
                 marginTop: '24px',
-                marginBottom: '32px'
+                marginBottom: '32px',
+                marginLeft: 'auto',
+                marginRight: 'auto'
               }}>
                 <div style={{
                   color: '#2563EB', fontSize: '14px', fontWeight: 'bold',
@@ -695,15 +698,18 @@ export default function Services() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.85, ease: 'easeOut', delay: 0.15 }}
+              className="w-full px-4 sm:px-0"
               style={{ flex: '2 1 300px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
             >
-              <TechNetwork />
+              <div className="w-full max-w-[360px] sm:max-w-none scale-[0.82] sm:scale-100 origin-center">
+                <TechNetwork />
+              </div>
             </motion.div>
           </div>
         </section>
 
         {/* Main Services Grid */}
-        <section className="relative z-10 py-16">
+        <section className="relative z-10 pt-8 pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
               {services.map((service, index) => (

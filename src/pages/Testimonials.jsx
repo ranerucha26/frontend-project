@@ -69,7 +69,7 @@ export default function Testimonials() {
         </div>
 
         {/* Header */}
-        <section className="relative z-10 py-20 md:py-32 pt-32">
+        <section className="relative z-10 pt-32 pb-10 md:pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -102,7 +102,7 @@ export default function Testimonials() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-all"
+                  className="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                 >
 
                   <div className="flex items-center gap-4 mb-6">

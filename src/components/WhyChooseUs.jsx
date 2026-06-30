@@ -40,7 +40,7 @@ const flipCardsData = [
   },
   {
     title: 'Proven Results',
-    description: '500+ happy clients, 10+ countries, and a 99.9% project success rate across all engagements.',
+    description: '15+ happy clients, 10+ countries, and a 99.9% project success rate across all engagements.',
     icon: Award,
     color: '#D97706',
     gradient: ['#D97706', '#CA8A04'],
@@ -132,6 +132,12 @@ function FlipCard({ card, index }) {
       onClick={() => setFlipped(f => !f)}
       style={{ perspective: '1000px', cursor: 'pointer' }}
     >
+      <div
+        className="absolute inset-4 rounded-[24px] blur-2xl opacity-25 pointer-events-none"
+        style={{
+          background: `radial-gradient(circle, ${card.color}30 0%, transparent 70%)`,
+        }}
+      />
       <motion.div
         className="w-full h-full relative"
         animate={{ rotateY: flipped ? 180 : 0, y: flipped ? -8 : 0 }}
@@ -142,7 +148,7 @@ function FlipCard({ card, index }) {
         <div
           className="absolute inset-0 rounded-[16px] p-8 flex flex-col items-center justify-center text-center overflow-hidden bg-white border border-slate-200"
           style={{
-            boxShadow: `0 10px 25px -5px rgba(0,0,0,0.03), 0 0 1px rgba(0,0,0,0.05)`,
+            boxShadow: `0 10px 25px -5px rgba(0,0,0,0.03), 0 0 1px rgba(0,0,0,0.05), 0 0 30px ${card.color}14`,
             backfaceVisibility: 'hidden',
           }}
         >
@@ -166,7 +172,7 @@ function FlipCard({ card, index }) {
           style={{
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)',
-            boxShadow: '0 20px 40px -15px rgba(15,23,42,0.3)',
+            boxShadow: `0 20px 40px -15px rgba(15,23,42,0.3), 0 0 32px ${card.color}1F`,
           }}
         >
           <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: `radial-gradient(${card.color} 1px, transparent 1px)`, backgroundSize: '16px 16px' }} />

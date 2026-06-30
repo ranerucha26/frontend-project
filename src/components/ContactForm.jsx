@@ -126,8 +126,8 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
         className={`w-full p-8 md:p-[50px] lg:p-[60px] rounded-[28px] bg-white border border-gray-200 shadow-2xl ${className}`}
       >
         {showCardHeader && (
-          <div className="mb-[40px]">
-            <div className="w-12 h-1 bg-cyan-500 rounded-full mb-4" />
+          <div className="mb-[40px] text-center">
+            <div className="w-12 h-1 bg-cyan-500 rounded-full mb-4 mx-auto" />
             <h3 className="text-[36px] font-bold text-gray-900 leading-tight">
               Start Your Journey
             </h3>
