@@ -37,7 +37,7 @@ function AnimatedCounter({ from = 0, to, suffix = '' }) {
 
 const stats = [
   {
-    numericValue: 30,
+    numericValue: 25,
     suffix: '+',
     label: 'Expert Team Members',
     color: '59,130,246',
@@ -63,7 +63,7 @@ const stats = [
   },
 
   {
-    numericValue: 3,
+    numericValue: 1,
     suffix: '+',
     label: 'Years of Experience',
     color: '251,191,36',
@@ -286,7 +286,7 @@ export default function AboutPreview() {
   return (
     <section
       ref={ref}
-      className="relative w-full bg-gradient-to-b from-white to-blue-50 py-[120px] overflow-hidden"
+      className="relative w-full bg-gradient-to-b from-white to-blue-50 pt-[72px] pb-[120px] overflow-hidden"
     >
       {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none">
@@ -318,13 +318,13 @@ export default function AboutPreview() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center md:text-left mb-10"
+          className="text-center md:text-left mb-1"
         >
-          <h2 className="text-[40px] md:text-[56px] font-bold leading-[1.1] tracking-tight">
-            <span className="text-gray-900">About </span>
+          <h2 className="text-[40px] md:text-[56px] font-bold leading-[1.05] tracking-tight">
+            <span className="block text-gray-900">About</span>
 
             <span
-              className="bg-clip-text text-transparent"
+              className="block whitespace-nowrap text-[0.8em] md:text-[0.84em] bg-clip-text text-transparent"
               style={{
                 backgroundImage:
                   'linear-gradient(135deg,#06B6D4,#3B82F6,#8B5CF6)',

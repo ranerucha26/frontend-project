@@ -123,7 +123,7 @@ export default function About() {
   const statCards = [
     {
       id: 1,
-      number: '3+',
+      number: '1+',
       label: 'Years of Excellence',
       sublabel: 'Building digital products since 2020',
       icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z',
@@ -136,7 +136,7 @@ export default function About() {
     },
     {
       id: 2,
-      number: '20+',
+      number: '25+',
       label: 'Projects Delivered',
       sublabel: 'Across web, mobile and enterprise',
       icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
@@ -158,6 +158,19 @@ export default function About() {
       glow: 'rgba(8,145,178,0.08)',
       border: '#e2e8f0',
       hoverBorder: 'rgba(8,145,178,0.4)',
+      bar: 78,
+    },
+    {
+      id: 4,
+      number: '2+',
+      label: 'Countries Served',
+      sublabel: 'Global reach across 4 continents',
+      icon: 'M12 3a15.3 15.3 0 010 18m0-18a15.3 15.3 0 000 18M5.64 7h12.72M5.64 17h12.72M12 3a9 9 0 110 18 9 9 0 010-18z',
+      from: '#6830b0',
+      to: '#6c24a7',
+      glow: 'rgba(8,145,178,0.08)',
+      border: '#e2e8f0',
+      hoverBorder: 'rgba(131, 26, 196, 0.66)',
       bar: 78,
     },
 
@@ -251,9 +264,9 @@ export default function About() {
                 transition={{ duration: 0.8 }}
                 className="space-y-6"
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-8">
-                  <span className="text-slate-900">About </span>
-                  <span style={{
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight mb-8">
+                  <span className="block text-slate-900">About</span>
+                  <span className="block whitespace-nowrap text-[0.8em] md:text-[0.84em]" style={{
                     backgroundImage: 'linear-gradient(to right, #0891B2, #2563EB, #7C3AED)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
@@ -308,7 +321,7 @@ export default function About() {
                     </svg>
                   </div>
                   
-                  <div className="relative z-10 text-4xl font-black text-slate-900 mb-2 tracking-tight">30+</div>
+                  <div className="relative z-10 text-4xl font-black text-slate-900 mb-2 tracking-tight">25+</div>
                   <div className="relative z-10 text-sm text-slate-600 font-bold">Expert Team Members</div>
                 </motion.div>
 
@@ -328,7 +341,7 @@ export default function About() {
                     </svg>
                   </div>
                   
-                  <div className="relative z-10 text-4xl font-black text-slate-900 mb-2 tracking-tight">3+</div>
+                  <div className="relative z-10 text-4xl font-black text-slate-900 mb-2 tracking-tight">1+</div>
                   <div className="relative z-10 text-sm text-slate-600 font-bold">Years of Experience</div>
                 </motion.div>
 
@@ -549,7 +562,7 @@ export default function About() {
           </motion.div>
 
           {/* Stats grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {statCards.map((card, index) => (
               <motion.div
                 key={card.id}
@@ -625,7 +638,7 @@ export default function About() {
                 Founded in <span className="text-slate-900 font-bold">2022</span> by a group of passionate developers and designers, Sapphire Infotech Solutions began with a simple vision: to craft high-performance digital experiences that truly matter to the people who use them.
               </p>
               <p>
-                In just <span className="text-blue-600 font-bold">3+ years</span>, we've grown into a dynamic studio of <span className="text-slate-900 font-bold">30+ expert professionals</span> — developers, designers, and strategists — all united by an unwavering commitment to excellence and innovation.
+                In just <span className="text-blue-600 font-bold">1+ years</span>, we've grown into a dynamic studio of <span className="text-slate-900 font-bold">25+ expert professionals</span> — developers, designers, and strategists — all united by an unwavering commitment to excellence and innovation.
               </p>
               <p>
                 Today, we've delivered <span className="text-slate-900 font-bold">20+ successful projects</span> for <span className="text-slate-900 font-bold">15+ happy clients</span>  helping businesses of all sizes transform their digital infrastructure.

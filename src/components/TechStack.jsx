@@ -98,7 +98,7 @@ export default function TechStack() {
     <section 
       ref={ref}
       className="relative py-24 bg-[#f8fafc] overflow-hidden"
-      style={{ paddingTop: '80px', paddingBottom: '80px' }}
+      style={{ paddingTop: '40px', paddingBottom: '80px' }}
     >
       {/* Subtle Animated Background Spheres */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
