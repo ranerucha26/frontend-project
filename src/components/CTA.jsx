@@ -74,8 +74,8 @@ export default function CTA() {
   ]
 
   const stats = [
-    { number: '30+', label: 'Expert Team' },
-    { number: '3+', label: 'Years Experience' }
+    { number: '25+', label: 'Expert Team' },
+    { number: '1+', label: 'Years Experience' }
   ]
 
   return (

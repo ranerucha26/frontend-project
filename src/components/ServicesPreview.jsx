@@ -157,7 +157,7 @@ export default function ServicesPreview() {
     <section
       id="services"
       ref={ref}
-      className="relative py-24 bg-[#f8fafc] overflow-hidden scroll-mt-24"
+      className="relative pt-24 pb-8 bg-[#f8fafc] overflow-hidden scroll-mt-24"
     >
    
 

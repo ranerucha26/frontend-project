@@ -639,7 +639,7 @@ export default function Services() {
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.85, ease: 'easeOut' }}
-              className="text-center flex flex-col items-center"
+              className="text-center lg:text-left flex flex-col items-center lg:items-start"
               style={{ flex: '3 1 340px', minWidth: 0 }}
             >
               <h1 style={{
@@ -660,7 +660,9 @@ export default function Services() {
                 </span>
               </h1>
 
-              <div style={{
+              <div
+                className="mx-auto lg:mx-0"
+                style={{
                 position: 'relative',
                 borderTop: '5px solid #2563EB',
                 paddingLeft: '0',
@@ -669,8 +671,6 @@ export default function Services() {
                 maxWidth: '650px',
                 marginTop: '24px',
                 marginBottom: '32px',
-                marginLeft: 'auto',
-                marginRight: 'auto'
               }}>
                 <div style={{
                   color: '#2563EB', fontSize: '14px', fontWeight: 'bold',

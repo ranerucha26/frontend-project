@@ -253,6 +253,17 @@ export default function Hero() {
           
           {/* LEFT COLUMN ── Text Content Blocks */}
           <div className="flex flex-col text-left order-1 lg:order-1 max-w-xl pt-4 md:pt-0">
+            <motion.div
+  variants={fadeUp}
+  initial="hidden"
+  animate="visible"
+  custom={0}
+  className="mb-4"
+>
+  <div className="inline-flex items-center justify-center px-5 py-2 rounded-full border-2 border-cyan-200 bg-cyan-50 text-sky-800 font-bold uppercase tracking-wider shadow-sm">
+    Sapphire Infotech Solutions
+  </div>
+</motion.div>
             <motion.h1
               variants={fadeUp}
               initial="hidden"

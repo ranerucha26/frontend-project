@@ -8,7 +8,7 @@ export default function TeamSpotlight() {
   const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   return (
-    <section ref={ref} className="relative pt-[60px] md:pt-[80px] pb-[100px] bg-[#f8fafc] overflow-hidden">
+    <section ref={ref} className="relative pt-[60px] md:pt-[80px] pb-[56px] bg-[#f8fafc] overflow-hidden">
       {/* Background Pattern */}
       <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none" style={{ opacity: 0.06 }}>
         <defs>

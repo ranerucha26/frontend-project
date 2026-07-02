@@ -120,12 +120,20 @@ export default function About() {
             animate="visible"
             className="mb-12"
           >
-            <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight">
-              <span className="text-white">About </span>
-              <span className="bg-gradient-to-r from-pink-500 via-rose-500 to-coral-500 bg-clip-text text-transparent">
-                Sapphire Infotech Solutions
-              </span>
-            </h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-8">
+          <span className="block text-slate-900">About</span>
+          <span
+             className="block"
+             style={{
+               backgroundImage: 'linear-gradient(to right, #0891B2, #2563EB, #7C3AED)',
+               WebkitBackgroundClip: 'text',
+               WebkitTextFillColor: 'transparent',
+               backgroundClip: 'text',
+                }}
+  >
+    Sapphire Infotech Solutions
+  </span>
+</h1>
           </motion.div>
 
           {/* Description */}
@@ -154,7 +162,7 @@ export default function About() {
             className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16"
           >
             <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-900/30 to-cyan-900/20 border border-blue-800/30 backdrop-blur-sm">
-              <div className="text-4xl font-bold text-cyan-400 mb-2">3+</div>
+              <div className="text-4xl font-bold text-cyan-400 mb-2">1+</div>
               <div className="text-blue-200">Years Experience</div>
             </div>
             
