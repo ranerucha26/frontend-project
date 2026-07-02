@@ -28,7 +28,7 @@ export default function TeamSpotlight() {
           className="text-center mb-[60px]"
         >
           <h2 className="text-[34px] sm:text-[56px] font-black tracking-tight whitespace-nowrap">
-            <span className="text-slate-900">Meet Our </span>
+            <span className="text-slate 900">Meet Our </span>
             <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #0891b2, #2563eb, #7c3aed)' }}>
               Team
             </span>
@@ -86,15 +86,15 @@ export default function TeamSpotlight() {
 
           {/* Right: Info */}
           <div className="w-full md:w-[60%] flex flex-col items-center text-center md:items-start md:text-left">
-            <h3 className="text-[26px] sm:text-[32px] md:text-[44px] font-extrabold mb-[16px] text-slate-900 whitespace-nowrap">
-              <span>Meet Our </span>
-              <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #2563eb, #1d4ed8)' }}>
-                Founder
+            <h3 className="text-[25px] sm:text-[32px] md:text-[40px] font-extrabold mb-[16px] text-slate-900">
+              <span className="text-slate-700">Meet Our </span>
+              <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #0891b2, #0284c7)' }}>
+                Visionary Founder
               </span>
             </h3>
 
-            <div className="inline-block rounded-[20px] px-[16px] py-[8px] font-bold text-[14px] mb-[24px] text-blue-700 bg-blue-50 border border-blue-100">
-              👤 Abhinav Mishra - Founder & Director
+            <div className="inline-block rounded-[20px] px-[16px] py-[8px] font-bold text-[14px] mb-[24px] text-cyan-700 bg-cyan-50 border border-cyan-100">
+              <span className='mr-[8px]'>👤</span> Abhinav Mishra - Founder & Director
             </div>
 
             <p className="text-[15px] md:text-[16px] text-slate-600 leading-[1.8] mb-[32px] font-medium">
@@ -125,9 +125,10 @@ export default function TeamSpotlight() {
             >
               <motion.button 
                 whileHover={{ scale: 1.02 }}
-                className="px-[24px] py-[12px] rounded-[12px] font-bold text-white text-[16px] bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/10 transition-colors duration-200"
+                className="px-[24px] py-[12px] rounded-[12px] font-bold text-white text-[16px] bg-cyan-600 hover:bg-cyan-700 shadow-lg shadow-cyan-600/10 transition-colors duration-200"
               >
-                Connect on LinkedIn &rarr;
+                Connect on LinkedIn 
+                <span className='text-[22px] font-extrabold'> →</span>
               </motion.button>
             </a>
           </div>
@@ -184,15 +185,15 @@ export default function TeamSpotlight() {
 
           {/* Right: Info */}
           <div className="w-full md:w-[60%] flex flex-col items-center text-center md:items-start md:text-left">
-            <h3 className="text-[26px] sm:text-[32px] md:text-[44px] font-extrabold mb-[16px] text-slate-900 whitespace-nowrap">
-              <span>Meet Our </span>
+            <h3 className="text-[26px] sm:text-[32px] md:text-[40px] font-extrabold mb-[16px] text-slate-900 ">
+              <span className="text-slate-700">Meet Our </span>
               <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #0891b2, #0284c7)' }}>
                 Technical Head
               </span>
             </h3>
 
             <div className="inline-block rounded-[20px] px-[16px] py-[8px] font-bold text-[14px] mb-[24px] text-cyan-700 bg-cyan-50 border border-cyan-100">
-              💻 Suraj Sahani - Technical Head
+              <span className='mr-[8px]'>💻</span> Suraj Sahani - Technical Head
             </div>
 
             <p className="text-[15px] md:text-[16px] text-slate-600 leading-[1.8] mb-[32px] font-medium">
@@ -225,7 +226,8 @@ export default function TeamSpotlight() {
                 whileHover={{ scale: 1.02 }}
                 className="px-[24px] py-[12px] rounded-[12px] font-bold text-white text-[16px] bg-cyan-600 hover:bg-cyan-700 shadow-lg shadow-cyan-600/10 transition-colors duration-200"
               >
-                Explore Portfolio &rarr;
+                Explore Portfolio
+                <span className='text-[22px] font-extrabold'> →</span>
               </motion.button>
             </a>
           </div>

@@ -52,8 +52,8 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative z-10 bg-gradient-to-b from-white to-blue-50 border-t border-gray-200 mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <footer className="relative z-10 bg-gradient-to-b from-white to-blue-50 border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12">
 
         <motion.div
           initial="hidden"
@@ -64,7 +64,7 @@ export default function Footer() {
               transition: { staggerChildren: 0.1 },
             },
           }}
-          className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12"
+          className="grid grid-cols-1 md:grid-cols-4 gap-y-8 md:gap-x-24 mb-12"
         >
 
           {/* BRAND SECTION */}
@@ -90,7 +90,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Quick Links */}
-          <motion.div variants={fadeUp}>
+          <motion.div variants={fadeUp} className='mt-0 md:mt-0 px-4 md:px-0'>
             <h4 className="text-slate-900 font-bold mb-4 text-base tracking-wide">
               Quick Links
             </h4>
@@ -103,7 +103,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Resources */}
-          <motion.div variants={fadeUp}>
+          <motion.div variants={fadeUp} className='mt-1 md:mt-0 px-4 md:px-0'>
             <h4 className="text-slate-900 font-bold mb-4 text-base tracking-wide">
               Resources
             </h4>
@@ -117,7 +117,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Connect */}
-          <motion.div variants={fadeUp}>
+          <motion.div variants={fadeUp} className='mt-1 md:mt-0 px-4 md:px-0'>
             <h4 className="text-slate-900 font-bold mb-4 text-base tracking-wide">
               Connect
             </h4>
@@ -143,7 +143,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-slate-200 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm font-semibold">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm font-semibold text-center md:text-left">
             <p>© {currentYear} Sapphire Infotech Solutions. All rights reserved.</p>
             <p className="text-slate-400">Crafted with precision and passion.</p>
           </div>

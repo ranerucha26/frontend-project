@@ -203,9 +203,10 @@ const TechNetwork = () => {
     { label: 'Data', icon: BarChart, color: '#2563EB', angle: 270 },
     { label: 'Consulting', icon: Lightbulb, color: '#0891B2', angle: 315 },
   ]
+  const networkRadius = 135
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: '500px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <div style={{ position: 'relative', width: '100%', height: 'clamp(280px, 42vw, 380px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <svg style={{ position: 'absolute', width: '480px', height: '480px', overflow: 'visible', zIndex: 0 }} viewBox="-240 -240 480 480">
         {nodes.map((n, i) => {
           const rad = (n.angle * Math.PI) / 180
@@ -620,7 +621,7 @@ export default function Services() {
       
       <main className="relative">
         {/* Hero Section */}
-        <section className="relative overflow-hidden" style={{ minHeight: '80vh', paddingTop: '100px', paddingBottom: '60px' }}>
+        <section className="relative overflow-hidden" style={{ minHeight: 'auto', paddingTop: '100px', paddingBottom: '24px' }}>
           <NetworkStyles />
           <HeroAmbient />
 
@@ -669,13 +670,14 @@ export default function Services() {
                 paddingTop: '8px',
                 paddingBottom: '8px',
                 maxWidth: '650px',
-                marginTop: '24px',
+                marginTop: '2px',
                 marginBottom: '32px',
               }}>
                 <div style={{
                   color: '#2563EB', fontSize: '14px', fontWeight: 'bold',
                   textTransform: 'uppercase', letterSpacing: '1.5px',
-                  marginBottom: '12px'
+                  marginBottom: '12px',
+                  marginTop: '5px',
                 }}>
                   What We Do
                 </div>
@@ -699,7 +701,7 @@ export default function Services() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.85, ease: 'easeOut', delay: 0.15 }}
               className="w-full px-4 sm:px-0"
-              style={{ flex: '2 1 300px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+              style={{ flex: '2 1 300px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}
             >
               <div className="w-full max-w-[360px] sm:max-w-none scale-[0.82] sm:scale-100 origin-center">
                 <TechNetwork />
@@ -720,14 +722,14 @@ export default function Services() {
         </section>
 
         {/* Process Section */}
-        <section className="relative z-10 py-20 bg-[#f1f5f9]">
+        <section className="relative z-10 pt-8 pb-0 md:py-2 bg-[#f1f5f9]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="text-center mb-16"
+              className="text-center mb-6 md-16"
             >
               <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-slate-900">
                 <span>Our </span>
@@ -745,14 +747,14 @@ export default function Services() {
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="relative z-10 py-24 bg-[#f8fafc] overflow-hidden">
+        <section className="relative z-10 pt-15 pb-15 md:py-15 bg-[#f8fafc] overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="text-center mb-20"
+              className="text-center mb-8 md:mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-slate-900">
                 <span>Why </span>
@@ -777,7 +779,7 @@ export default function Services() {
         </section>
 
         {/* CTA Section */}
-        <section className="relative z-10 py-20 overflow-hidden">
+        <section className="relative z-10 pt-5 pb-15 md:py-15 overflow-hidden">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}

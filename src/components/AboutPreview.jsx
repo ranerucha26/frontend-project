@@ -47,7 +47,7 @@ const stats = [
 
     icon: (
       <svg
-        className="w-[42px] h-[42px] text-blue-500"
+        className="w-6 h-6 md:w-9 md:h-9 text-blue-500"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -73,7 +73,7 @@ const stats = [
 
     icon: (
       <svg
-        className="w-[42px] h-[42px] text-yellow-500"
+        className="w-6 h-6 md:w-9 md:h-9 text-yellow-500"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -99,7 +99,7 @@ const stats = [
 
     icon: (
       <svg
-        className="w-[42px] h-[42px] text-pink-500"
+        className="w-6 h-6 md:w-9 md:h-9 text-pink-500"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -214,7 +214,7 @@ function StatCard({ stat, index }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
 
-      className="relative flex flex-col justify-center items-center text-center p-[40px] rounded-[24px] transition-all duration-400 w-full min-h-[260px] overflow-hidden bg-white border border-gray-200 shadow-xl"
+      className="relative flex flex-col justify-center items-center text-center p-2.5 md:p-[20px] rounded-[18px] md:rounded-[24px] transition-all duration-400 w-full min-h-[140px] md:min-h-[260px] overflow-hidden bg-white border border-gray-200 shadow-xl"
       style={{
         boxShadow: hovered
           ? `0 20px 60px rgba(${stat.color}, 0.18)`
@@ -239,7 +239,7 @@ function StatCard({ stat, index }) {
 
       {/* Icon */}
       <motion.div
-        className="w-[80px] h-[80px] rounded-2xl flex items-center justify-center mb-4 shrink-0"
+        className="w-12 h-12 md:w-[80px] md:h-[80px] rounded-xl md:rounded-2xl flex items-center justify-center mb-1 md:mb-4 shrink-0"
         style={{
           background: stat.gradient,
         }}
@@ -263,12 +263,12 @@ function StatCard({ stat, index }) {
       </motion.div>
 
       {/* Number */}
-      <div className="text-[48px] font-bold text-gray-900 leading-none mt-[16px] tracking-[1px]">
+      <div className="text-lg md:text-[48px] font-bold text-gray-900 leading-none mt-1 md:mt-[16px] tracking-[1px]">
         <AnimatedCounter to={stat.numericValue} suffix={stat.suffix} />
       </div>
 
       {/* Label */}
-      <div className="text-[16px] font-medium text-gray-600 mt-[12px] tracking-[0.5px]">
+      <div className="text-xs md:text-[16px] font-medium text-gray-600 mt-2 md:mt-[12px] tracking-[0.5px]">
         {stat.label}
       </div>
     </motion.div>
@@ -286,7 +286,7 @@ export default function AboutPreview() {
   return (
     <section
       ref={ref}
-      className="relative w-full bg-gradient-to-b from-white to-blue-50 pt-[72px] pb-[120px] overflow-hidden"
+      className="relative w-full bg-gradient-to-b from-white to-blue-50 py-[40px] overflow-hidden"
     >
       {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none">
@@ -312,7 +312,6 @@ export default function AboutPreview() {
       </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-[60px] lg:px-[100px]">
-
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -320,31 +319,29 @@ export default function AboutPreview() {
           transition={{ duration: 0.7 }}
           className="text-center md:text-left mb-1"
         >
-          <h2 className="text-[40px] md:text-[56px] font-bold leading-[1.05] tracking-tight">
-            <span className="block text-gray-900">About</span>
+          <h2 className="text-[28px] sm:text-[40px] md:text-[56px] font-bold leading-[1.05] tracking-tight md:mt-10 mb-4 md:mb-6">
+            <span className="block text-gray-900 ">About</span>
 
             <span
-              className="block whitespace-nowrap text-[0.8em] md:text-[0.84em] bg-clip-text text-transparent"
+              className="whitespace-nowrap text-[0.9em] sm:text-[0.8em] md:text-[0.84em] bg-clip-text text-transparent"
               style={{
                 backgroundImage:
                   'linear-gradient(135deg,#06B6D4,#3B82F6,#8B5CF6)',
               }}
             >
-               Sapphire Infotech Solutions
+              Sapphire Infotech Solutions
             </span>
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[55%_1fr] gap-[60px] items-center">
-
+        <div className="grid grid-cols-1 lg:grid-cols-[55%_1fr] gap-10 lg:gap-[60px] items-center">
           {/* Left Side */}
           <div className="lg:pr-[20px]">
-
             <motion.p
               initial={{ opacity: 0, x: -30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-[18px] text-gray-700 leading-[1.8] mb-[24px]"
+              className="text-[18px] text-gray-700 leading-[1.7] mb-4 md:mb-3 text-center md:text-left"
             >
               We're a passionate team of digital craftspeople dedicated
               to creating exceptional digital experiences.
@@ -354,14 +351,14 @@ export default function AboutPreview() {
               initial={{ opacity: 0, x: -30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-[18px] text-gray-700 leading-[1.8] mb-[40px]"
+              className="text-[18px] text-gray-700 leading-[1.7] mb-4 md:mb-4 text-center md:text-left"
             >
               Founded in 2022, we've grown from a small startup to a
               leading digital agency working with clients worldwide.
             </motion.p>
 
             {/* Values */}
-            <div className="space-y-[16px]">
+            <div className="space-y-[16px] w-fit mx-auto md:w-full">
               {values.map((val, i) => (
                 <motion.div
                   key={i}
@@ -371,7 +368,6 @@ export default function AboutPreview() {
                     duration: 0.6,
                     delay: 0.3 + i * 0.1,
                   }}
-
                   className="flex items-center gap-[16px]"
                 >
                   <div className="w-[42px] h-[42px] rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-cyan-500 shadow-sm shrink-0">
@@ -387,7 +383,7 @@ export default function AboutPreview() {
           </div>
 
           {/* Right Side Stats */}
-          <div className="grid grid-cols-2 gap-[24px] lg:pl-[20px]">
+          <div className="grid grid-cols-2 gap-4 md:gap-6 lg:pl-[20px]">
             {stats.map((stat, i) => (
               <StatCard key={i} stat={stat} index={i} />
             ))}
