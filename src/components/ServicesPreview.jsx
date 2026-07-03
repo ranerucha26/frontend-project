@@ -157,7 +157,7 @@ export default function ServicesPreview() {
     <section
       id="services"
       ref={ref}
-      className="relative pt-24 pb-8 bg-[#f8fafc] overflow-hidden scroll-mt-24"
+      className="relative pt-17 pb-8 bg-[#f8fafc] overflow-hidden scroll-mt-24"
     >
    
 
@@ -197,7 +197,7 @@ export default function ServicesPreview() {
               Services
             </span>
           </h2>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-16 font-medium">
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-3 md:mb-16 font-medium">
             End-to-end digital solutions crafted to turn your vision into a competitive advantage.
           </p>
         </motion.div>

@@ -223,7 +223,7 @@ export default function TechStack() {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7 justify-items-center"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12  justify-items-center"
             style={{ maxWidth: '1400px', margin: '0 auto' }}
           >
             {filteredTech.map((tech, index) => (

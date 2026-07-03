@@ -81,7 +81,7 @@ export default function CTA() {
   return (
     <section
       ref={ref}
-      className="relative w-full bg-gradient-to-b from-white to-blue-50 py-[100px] overflow-hidden"
+      className="relative w-full bg-gradient-to-b from-white to-blue-50 py-15 md:py-[100px] overflow-hidden bg-slate-50 py-15 md:py-[100px]"
     >
       {/* Background */}
       <svg
@@ -127,7 +127,7 @@ export default function CTA() {
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-[40px] lg:px-[80px]">
 
-        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-[60px] items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-[100px] items-start">
 
           {/* LEFT */}
           <div className="w-full flex flex-col justify-center items-center h-full text-center">

@@ -195,7 +195,7 @@ export default function WhyChooseUs() {
   const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   return (
-    <section ref={ref} className="relative py-[100px] bg-[#f8fafc] overflow-hidden">
+    <section ref={ref} className="relative pt-3 pb-16 md:pt-10 md:pd-20 bg-[#f8fafc] overflow-hidden">
       <WhyStyles />
 
       {/* Ambient radial highlight */}
