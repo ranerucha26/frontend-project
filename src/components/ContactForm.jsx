@@ -143,28 +143,32 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
             <motion.div variants={staggerItem}>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Your Name *"
-                required
-                disabled={isSubmitting}
-                style={inputStyle('name')}
-                onFocus={() => setFocusedField('name')}
-                onBlur={() => setFocusedField(null)}
-                className="placeholder:text-gray-400"
-              />
+              <label className="block mb-2 tracking-wider text-gray-600 font-semibold">
+                Your Name <span className="text-red-500">*</span></label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Full Name"
+                  required
+                  disabled={isSubmitting}
+                  style={inputStyle('name')}
+                  onFocus={() => setFocusedField('name')}
+                  onBlur={() => setFocusedField(null)}
+                  className="placeholder:text-gray-400"
+                />
             </motion.div>
 
             <motion.div variants={staggerItem}>
+              <label className="block mb-2 tracking-wider text-gray-600 font-semibold">
+                Email Address <span className="text-red-500">*</span></label>
               <input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="your@email.com *"
+                placeholder="your@email.com"
                 required
                 disabled={isSubmitting}
                 style={inputStyle('email')}
@@ -177,12 +181,14 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
             <motion.div variants={staggerItem}>
+              <label className="block mb-2 tracking-wider text-gray-600 font-semibold">
+                Phone <span className="text-red-500">*</span></label>
               <input
                 type="text"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="Mobile Number *"
+                placeholder="+91 ..."
                 required
                 disabled={isSubmitting}
                 style={inputStyle('phone')}
@@ -193,6 +199,8 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
             </motion.div>
 
             <motion.div variants={staggerItem} className="relative">
+              <label className="block mb-2 tracking-wider text-gray-600 font-semibold">
+                Looking For? <span className="text-red-500">*</span></label>
               <select
                 name="service"
                 value={formData.service}
@@ -205,7 +213,7 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
                 className="appearance-none cursor-pointer text-gray-700"
               >
                 <option value="" disabled>
-                  Service Interest *
+                  Choose Service Interested
                 </option>
                 {servicesList.map((service) => (
                   <option key={service} value={service}>
@@ -233,11 +241,13 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
           </div>
 
           <motion.div variants={staggerItem}>
+            <label className="block mb-2 tracking-wider text-gray-600 font-semibold">
+                How Can We Help You? <span className="text-red-500">*</span></label>
             <textarea
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Tell us about your project... *"
+              placeholder="A few details about your project, who it's for, your goals, and any special requirements... "
               required
               disabled={isSubmitting}
               style={{
@@ -289,11 +299,10 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
               className="relative w-full max-w-md p-8 bg-white border border-slate-100 shadow-2xl rounded-2xl text-center z-10"
             >
               <div
-                className={`mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-5 shadow-sm border ${
-                  isSuccess
-                    ? 'bg-emerald-50 border-emerald-100 text-emerald-500'
-                    : 'bg-red-50 border-red-100 text-red-500'
-                }`}
+                className={`mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-5 shadow-sm border ${isSuccess
+                  ? 'bg-emerald-50 border-emerald-100 text-emerald-500'
+                  : 'bg-red-50 border-red-100 text-red-500'
+                  }`}
               >
                 {isSuccess ? (
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">

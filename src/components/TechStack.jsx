@@ -152,7 +152,7 @@ export default function TechStack() {
         <rect width="100%" height="100%" fill="url(#dotGridTech)" />
       </svg>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-8 mt-0.50">
         {/* Premium Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -223,7 +223,7 @@ export default function TechStack() {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12  justify-items-center"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center"
             style={{ maxWidth: '1400px', margin: '0 auto' }}
           >
             {filteredTech.map((tech, index) => (

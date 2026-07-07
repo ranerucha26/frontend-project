@@ -319,7 +319,7 @@ export default function AboutPreview() {
           transition={{ duration: 0.7 }}
           className="text-center md:text-left mb-1"
         >
-          <h2 className="text-[28px] sm:text-[40px] md:text-[56px] font-bold leading-[1.05] tracking-tight md:mt-10 mb-4 md:mb-6">
+          <h2 className="text-[28px] sm:text-[40px] md:text-[56px] font-bold leading-[1.05] tracking-tight md:mt-10 mb-4 md:mb-0">
             <span className="block text-gray-900 ">About</span>
 
             <span

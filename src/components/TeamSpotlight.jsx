@@ -8,7 +8,7 @@ export default function TeamSpotlight() {
   const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   return (
-    <section ref={ref} className="relative pt-[60px] md:pt-[80px] pb-[56px] bg-[#f8fafc] overflow-hidden">
+    <section ref={ref} className="relative pt-[20px] md:pt-[50px] pb-[56px] bg-[#f8fafc] overflow-hidden">
       {/* Background Pattern */}
       <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none" style={{ opacity: 0.06 }}>
         <defs>
@@ -19,13 +19,13 @@ export default function TeamSpotlight() {
         <rect width="100%" height="100%" fill="url(#dotTeam)" />
       </svg>
       
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-[60px]">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px- pt-4 md:16">
         {/* Heading */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-[60px]"
+          className="text-center mb-[30px] md:mb-[40px]"
         >
           <h2 className="text-[34px] sm:text-[56px] font-black tracking-tight whitespace-nowrap">
             <span className="text-slate 900">Meet Our </span>
@@ -139,7 +139,7 @@ export default function TeamSpotlight() {
           initial={{ opacity: 0, x: 50 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
-          className="w-full rounded-[24px] p-[40px] md:p-[60px] flex flex-col md:flex-row items-center gap-[40px] md:gap-[60px] bg-white border border-slate-200"
+          className="w-full rounded-[24px] p-[40px] md:p-[60px] mb-[0px] flex flex-col md:flex-row items-center gap-[40px] md:gap-[60px] bg-white border border-slate-200"
           style={{
             boxShadow: '0 20px 40px -15px rgba(8, 145, 178, 0.04), 0 0 30px rgba(0, 0, 0, 0.02)'
           }}
