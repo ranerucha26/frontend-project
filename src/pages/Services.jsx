@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Monitor, Smartphone, PenTool, Cloud, Settings, Link2, BarChart, Lightbulb, Building, Search, Code, Rocket, Users, Zap, Clock, TrendingUp, Award } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -802,14 +803,17 @@ export default function Services() {
               </p>
               
               <div className="flex justify-center items-center">
-                <motion.a
-                  href="/contact"
+                <motion.div
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full sm:w-auto px-10 py-4 rounded-xl text-white text-lg font-bold bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/20 transition-colors duration-200"
+                >
+                  <Link
+                  to="/contact"
+                  className="w-full sm:w-auto px-8 sm:px-12 py-5 sm:py-6 rounded-3xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xl sm:text-2xl font-bold text-center whitespace-normal leading-tight shadow-[0_12px_30px_rgba(37,99,235,0.35)] transition-all duration-300 mx-auto block"
                 >
                   Schedule a Consultation
-                </motion.a>
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
           </div>
