@@ -74,11 +74,11 @@ export default function PopupModal() {
               <div className="mt-0 md:mt-2">
                 {!submitted ? (
                   <>
-                    <h2 className="text-[22px] md:text-[28px] font-bold text-white mb-2 md:mb-3 leading-tight pr-6">
+                    <h2 className="text-[22px] md:text-[28px] font-bold text-white mb-2 md:mb-3 leading-tight pr-6 text-center md:text-left">
                       Let's Build Something Great
                     </h2>
 
-                    <p className="text-[13px] md:text-[14px] mb-4 md:mb-6 leading-relaxed" style={{ color: '#94a3b8' }}>
+                    <p className="text-[13px] md:text-[14px] mb-4 md:mb-6 leading-relaxed text-center md:text-left" style={{ color: '#94a3b8' }}>
                       Tell us about your project and we'll get back to you within 24 hours.
                     </p>
 
@@ -91,7 +91,7 @@ export default function PopupModal() {
                     >
                       <input
                         type="text"
-                        placeholder="Full Name"
+                        placeholder="Full Name" required
                         className="w-full px-4 py-3 rounded-lg text-white text-sm outline-none placeholder:text-[#94a3b8]"
                         style={{
                           background: '#1e293b',
@@ -101,7 +101,7 @@ export default function PopupModal() {
 
                       <input
                         type="email"
-                        placeholder="Email Address"
+                        placeholder="Email Address" required
                         className="w-full px-4 py-3 rounded-lg text-white text-sm outline-none placeholder:text-[#94a3b8]"
                         style={{
                           background: '#1e293b',
@@ -111,7 +111,7 @@ export default function PopupModal() {
 
                       <input
                         type="tel"
-                        placeholder="Phone Number"
+                        placeholder="Phone Number" required
                         className="w-full px-4 py-3 rounded-lg text-white text-sm outline-none placeholder:text-[#94a3b8]"
                         style={{
                           background: '#1e293b',
@@ -120,7 +120,7 @@ export default function PopupModal() {
                       />
 
                       <textarea
-                        placeholder="Tell us about your requirement"
+                        placeholder="Tell us about your requirement" required
                         rows={3}
                         className="w-full px-4 py-3 rounded-lg text-white text-sm outline-none resize-none overflow-hidden placeholder:text-[#94a3b8]"
                         style={{
@@ -135,7 +135,7 @@ export default function PopupModal() {
                         className="w-full py-3.5 rounded-lg text-white font-bold text-base transition-all"
                         style={{ background: '#3b82f6' }}
                       >
-                        Get In Touch
+                        SUBMIT
                       </button>
                     </form>
                   </>

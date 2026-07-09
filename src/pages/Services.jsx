@@ -701,8 +701,8 @@ export default function Services() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.85, ease: 'easeOut', delay: 0.15 }}
-              className="w-full px-4 sm:px-0"
-              style={{ flex: '2 1 300px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}
+              className="w-full px-4 sm:px-0 mt-[-20px] sm:mt-[20px]"
+              style={{ flex: '2 1 300px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}
             >
               <div className="w-full max-w-[360px] sm:max-w-none scale-[0.82] sm:scale-100 origin-center">
                 <TechNetwork />

@@ -319,11 +319,11 @@ export default function AboutPreview() {
           transition={{ duration: 0.7 }}
           className="text-center md:text-left mb-1"
         >
-          <h2 className="text-[28px] sm:text-[40px] md:text-[56px] font-bold leading-[1.05] tracking-tight md:mt-10 mb-4 md:mb-0">
+          <h2 className="text-[28px] sm:text-[40px] md:text-[56px] font-bold leading-[1.05] tracking-tight md:mt-10 mb-4 md:mb-0 font-extrabold">
             <span className="block text-gray-900 ">About</span>
 
             <span
-              className="whitespace-nowrap text-[0.9em] sm:text-[0.8em] md:text-[0.84em] bg-clip-text text-transparent"
+              className="whitespace-nowrap text-[0.9em] sm:text-[0.8em] md:text-[0.84em] bg-clip-text text-transparent font-extrabold"
               style={{
                 backgroundImage:
                   'linear-gradient(135deg,#06B6D4,#3B82F6,#8B5CF6)',

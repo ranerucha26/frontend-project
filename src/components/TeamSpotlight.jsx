@@ -88,8 +88,8 @@ export default function TeamSpotlight() {
           <div className="w-full md:w-[60%] flex flex-col items-center text-center md:items-start md:text-left">
             <h3 className="text-[25px] sm:text-[32px] md:text-[40px] font-extrabold mb-[16px] text-slate-900">
               <span className="text-slate-700">Meet Our </span>
-              <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #0891b2, #0284c7)' }}>
-                Visionary Founder
+              <span className="bg-clip-text whitespace-nowrap text-transparent"style={{ backgroundImage: 'linear-gradient(135deg, #0891b2, #0284c7)' }}>
+               Visionary Founder
               </span>
             </h3>
 
