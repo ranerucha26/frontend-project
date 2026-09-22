@@ -99,7 +99,7 @@ function ServiceCard({ service, index }) {
           boxShadow: hovered
             ? `0 20px 30px -10px rgba(0,0,0,0.04), 0 0 25px -5px ${service.color}15`
             : '0 4px 6px -1px rgba(0,0,0,0.02)',
-          cursor: 'default',
+          cursor: 'pointer',
         }}
       >
         {/* Top accent */}
@@ -205,7 +205,9 @@ export default function ServicesPreview() {
         {/* Grid — 3 columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.slice(0, 3).map((service, index) => (
-            <ServiceCard key={service.title} service={service} index={index} />
+            <Link key={service.title} to="/services">
+              <ServiceCard service={service} index={index} />
+            </Link>
           ))}
         </div>
 

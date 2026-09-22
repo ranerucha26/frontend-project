@@ -100,7 +100,9 @@ export default function ProjectsPreview() {
         {/* Projects */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} />
+            <Link key={project.title} to="/projects">
+              <ProjectCard project={project} index={index} />
+            </Link>
           ))}
         </div>
 

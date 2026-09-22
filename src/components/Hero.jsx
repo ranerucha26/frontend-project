@@ -285,9 +285,9 @@ export default function Hero() {
               custom={0.3}
               className="space-y-2 mb-10 text-slate-600 font-medium text-base md:text-lg leading-relaxed"
             >
-              <p>Sapphire Infotech Solutions crafts high-performance websites and mobile applications.</p>
-              <p>Tailored around your core business metrics — from wireframe architecture to final execution pipeline.</p>
-              <p>Optimize deployment parameters, scale backend nodes, and reduce structural infrastructure overhead.</p>
+              <p>Sapphire Infotech Solutions builds high-performance websites and mobile applications that drive real business results.</p>
+              <p>We partner with you from concept to launch — understanding your goals, designing scalable solutions, and delivering on time.</p>
+              <p>Focus on growing your business while we handle the technical complexity with proven expertise and reliable support.</p>
             </motion.div>
 
             <motion.div
