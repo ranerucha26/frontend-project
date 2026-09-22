@@ -358,6 +358,21 @@ const ServiceCard = ({ service, index }) => {
             </li>
           ))}
         </ul>
+
+        <Link 
+          to="/contact" 
+          className="mt-6 inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300"
+          style={{
+            background: isHovered ? service.color : `${service.color}20`,
+            color: isHovered ? '#ffffff' : service.color,
+            border: `1px solid ${service.color}40`,
+          }}
+        >
+          Discuss This Service
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </Link>
       </div>
     </motion.div>
   )

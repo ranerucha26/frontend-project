@@ -8,7 +8,7 @@ const testimonials = [
     name: 'SHIVAM DUBEY',
     company: 'HARI OM THALASSIC PVT LTD',
     role: 'Founder & CEO',
-    text: 'We needed a proper digital presence for our marine business — not just a brochure site. Sapphire listened to how we actually work, built what we asked for, and fixed issues quickly when we reported them. Our enquiries from the website have gone up noticeably.',
+    text: 'We needed a proper digital presence for our marine business — not just a brochure site. Sapphire listened to how we actually work, built what we asked for, and fixed issues quickly when we reported them. Our inquiries from the website have increased noticeably.',
     avatar: '👨‍💼',
   },
   {
@@ -29,14 +29,14 @@ const testimonials = [
     name: 'Vinod Sharma',
     company: 'Aayush Logistics Private Limited',
     role: 'Founder & CEO',
-    text: 'Logistics is messy — shipments, clients, follow-ups. Before this, a lot lived in WhatsApp and Excel. Sapphire built us a system that our office staff actually uses daily. Training was patient, and they stayed available after go-live when we had small tweaks.',
+    text: 'Logistics is complex — shipments, clients, follow-ups. Before this, a lot of our processes lived in WhatsApp and Excel. Sapphire built us a system that our office staff actually uses daily. Training was patient, and they remained available after launch when we needed small adjustments.',
     avatar: '👨‍💼',
   },
   {
     name: 'Ghanshyam Dubey',
     company: 'Hari Om Print House',
     role: 'Founder & CEO',
-    text: 'Print orders used to get mixed up — wrong quantity, late proofs. Now customers can share requirements online and we track each job in one place. It is not magic; we still run the shop — but mistakes and repeat calls have dropped a lot.',
+    text: 'Print orders used to get mixed up — wrong quantity, late proofs. Now customers can share requirements online and we track each job in one place. It is not magic; we still run the shop — but mistakes and follow-up calls have decreased significantly.',
     avatar: '👨‍💼',
   },
   {

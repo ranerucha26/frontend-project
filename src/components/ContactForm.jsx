@@ -43,6 +43,40 @@ const initialFormData = {
   message: '',
 }
 
+const validateForm = (data) => {
+  const newErrors = {}
+
+  if (!data.name.trim()) {
+    newErrors.name = 'Name is required'
+  } else if (data.name.trim().length < 2) {
+    newErrors.name = 'Please enter a valid name'
+  }
+
+  if (!data.email.trim()) {
+    newErrors.email = 'Email is required'
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) {
+    newErrors.email = 'Please enter a valid email address'
+  }
+
+  if (!data.phone.trim()) {
+    newErrors.phone = 'Phone number is required'
+  } else if (!/^[\d\s\+\-\(\)]{10,}$/.test(data.phone.trim())) {
+    newErrors.phone = 'Please enter a valid phone number'
+  }
+
+  if (!data.service) {
+    newErrors.service = 'Please select a service'
+  }
+
+  if (!data.message.trim()) {
+    newErrors.message = 'Message is required'
+  } else if (data.message.trim().length < 10) {
+    newErrors.message = 'Please provide more details (at least 10 characters)'
+  }
+
+  return newErrors
+}
+
 export default function ContactForm({ isInView = true, showCardHeader = true, className = '' }) {
   const [focusedField, setFocusedField] = useState(null)
   const [showPopup, setShowPopup] = useState(false)
@@ -50,6 +84,7 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
   const [popupMessage, setPopupMessage] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState(initialFormData)
+  const [errors, setErrors] = useState({})
 
   const inputStyle = (fieldId) => ({
     width: '100%',
@@ -71,6 +106,17 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }))
+    }
+  }
+
+  const handleBlur = (e) => {
+    const { name } = e.target
+    const fieldErrors = validateForm(formData)
+    if (fieldErrors[name]) {
+      setErrors(prev => ({ ...prev, [name]: fieldErrors[name] }))
+    }
   }
 
   const openPopup = (status, message = '') => {
@@ -81,6 +127,13 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    
+    const validationErrors = validateForm(formData)
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors)
+      return
+    }
+
     setIsSubmitting(true)
 
     const templateParams = {
@@ -145,19 +198,23 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
             <motion.div variants={staggerItem}>
               <label className="block mb-2 tracking-wider text-gray-600 font-semibold">
                 Your Name <span className="text-red-500">*</span></label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Full Name"
-                  required
-                  disabled={isSubmitting}
-                  style={inputStyle('name')}
-                  onFocus={() => setFocusedField('name')}
-                  onBlur={() => setFocusedField(null)}
-                  className="placeholder:text-gray-400"
-                />
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                placeholder="Full Name"
+                required
+                disabled={isSubmitting}
+                style={inputStyle('name')}
+                onFocus={() => setFocusedField('name')}
+                onBlur={() => setFocusedField(null)}
+                className="placeholder:text-gray-400"
+              />
+              {errors.name && (
+                <p className="mt-1 text-red-500 text-sm font-medium">{errors.name}</p>
+              )}
             </motion.div>
 
             <motion.div variants={staggerItem}>
@@ -168,6 +225,7 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                onBlur={handleBlur}
                 placeholder="your@email.com"
                 required
                 disabled={isSubmitting}
@@ -176,6 +234,9 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
                 onBlur={() => setFocusedField(null)}
                 className="placeholder:text-gray-400"
               />
+              {errors.email && (
+                <p className="mt-1 text-red-500 text-sm font-medium">{errors.email}</p>
+              )}
             </motion.div>
           </div>
 
@@ -188,6 +249,7 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
+                onBlur={handleBlur}
                 placeholder="+91 ..."
                 required
                 disabled={isSubmitting}
@@ -196,6 +258,9 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
                 onBlur={() => setFocusedField(null)}
                 className="placeholder:text-gray-400"
               />
+              {errors.phone && (
+                <p className="mt-1 text-red-500 text-sm font-medium">{errors.phone}</p>
+              )}
             </motion.div>
 
             <motion.div variants={staggerItem} className="relative">
@@ -205,6 +270,7 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
+                onBlur={handleBlur}
                 required
                 disabled={isSubmitting}
                 style={inputStyle('service')}
@@ -237,6 +303,9 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
                   />
                 </svg>
               </div>
+              {errors.service && (
+                <p className="mt-1 text-red-500 text-sm font-medium">{errors.service}</p>
+              )}
             </motion.div>
           </div>
 
@@ -247,6 +316,7 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
               name="message"
               value={formData.message}
               onChange={handleChange}
+              onBlur={handleBlur}
               placeholder="A few details about your project, who it's for, your goals, and any special requirements... "
               required
               disabled={isSubmitting}
@@ -260,6 +330,9 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
               onBlur={() => setFocusedField(null)}
               className="placeholder:text-gray-400"
             />
+            {errors.message && (
+              <p className="mt-1 text-red-500 text-sm font-medium">{errors.message}</p>
+            )}
           </motion.div>
 
           <motion.div variants={staggerItem}>
@@ -276,6 +349,16 @@ export default function ContactForm({ isInView = true, showCardHeader = true, cl
             >
               {isSubmitting ? 'Sending...' : 'Get Started →'}
             </motion.button>
+          </motion.div>
+
+          <motion.div variants={staggerItem} className="text-center">
+            <p className="text-slate-500 text-xs leading-relaxed">
+              Your information is secure and will only be used to respond to your inquiry. 
+              By submitting this form, you agree to our{' '}
+              <a href="/privacy-policy" className="text-cyan-600 hover:text-cyan-700 underline">
+                Privacy Policy
+              </a>.
+            </p>
           </motion.div>
         </motion.form>
       </div>
