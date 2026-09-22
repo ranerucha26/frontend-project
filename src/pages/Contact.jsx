@@ -90,19 +90,87 @@ export default function Contact() {
               className="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-8"
             >
               {[
-                { icon: '📧', title: 'Email', value: 'hello@sapphireinfotech.com' },
-                { icon: '📞', title: 'Phone', value: '+91 8080535352' },
-                { icon: '📍', title: 'Location', value: 'Mumbai, India' },
+                { 
+                  icon: '📧', 
+                  title: 'Email', 
+                  value: 'hello@sapphireinfotech.com',
+                  link: 'mailto:hello@sapphireinfotech.com'
+                },
+                { 
+                  icon: '📞', 
+                  title: 'Phone', 
+                  value: '+91 8080535352',
+                  link: 'tel:+918080535352'
+                },
+                { 
+                  icon: '📍', 
+                  title: 'Location', 
+                  value: 'Mumbai, India',
+                  link: 'https://www.google.com/maps/search/?api=1&query=Mumbai,+India'
+                },
               ].map((item, index) => (
-                <div
+                <a
                   key={index}
-                  className="text-center p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300"
+                  href={item.link}
+                  target={item.title === 'Location' ? '_blank' : undefined}
+                  rel={item.title === 'Location' ? 'noopener noreferrer' : undefined}
+                  className="text-center p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer"
                 >
                   <div className="text-4xl mb-3">{item.icon}</div>
                   <h4 className="text-slate-900 font-bold text-lg mb-1">{item.title}</h4>
                   <p className="text-slate-600 font-medium text-sm break-all leading-snug">{item.value}</p>
-                </div>
+                </a>
               ))}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mt-16 md:mt-20"
+            >
+              <div className="text-center mb-10">
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+                  What Happens Next?
+                </h2>
+                <div className="w-16 h-1 bg-cyan-500 rounded-full mx-auto" />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {[
+                  {
+                    step: '01',
+                    title: 'Send your inquiry',
+                    description: 'Fill out the form above with your project details and requirements.'
+                  },
+                  {
+                    step: '02',
+                    title: 'We review your request',
+                    description: 'Our team analyzes your needs and prepares a tailored response.'
+                  },
+                  {
+                    step: '03',
+                    title: "Let's discuss your project",
+                    description: 'We connect with you to explore how we can bring your vision to life.'
+                  }
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 + (index * 0.1) }}
+                    className="text-center p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300"
+                  >
+                    <div className="text-5xl font-black text-cyan-500 mb-4 opacity-30">
+                      {item.step}
+                    </div>
+                    <h3 className="text-slate-900 font-bold text-lg mb-2">{item.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
           </div>
         </section>
