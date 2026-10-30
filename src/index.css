@@ -1,44 +1,93 @@
 @import "tailwindcss";
 
-@keyframes aurora {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* Custom properties for the branding */
+:root {
+  --primary-gradient: linear-gradient(135deg, #0891b2, #2563eb, #7c3aed);
+  --secondary-gradient: linear-gradient(135deg, #f472b6, #ec4899);
+  --accent-color: #1e293b;
+  --surface: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.3);
 }
 
-/* Aurora background (light/white theme) */
-.aurora-bg {
-  background: linear-gradient(
-    -45deg,
-    rgba(59, 130, 246, 0.08),
-    rgba(6, 182, 212, 0.08),
-    rgba(255, 255, 255, 0.9)
-  );
-  background-size: 300% 300%;
-  animation: aurora 15s ease infinite;
-  opacity: 1;
-  filter: blur(40px);
+/* Modern gradient animated background */
+.hero-bg {
+  background: var(--primary-gradient);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  min-height: 100vh;
 }
 
-/* Perspective dotted grid (light theme) */
-.perspective-dots {
-  background-image: radial-gradient(
-    rgba(0, 0, 0, 0.08) 1px,
-    transparent 1px
-  );
-  background-size: 30px 30px;
-  transform: perspective(600px) rotateX(75deg);
-  transform-origin: bottom center;
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Optional global white background */
+/* Glassmorphism effects */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+}
+
+.neumorphic-btn {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 12px 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 4px 4px 8px -2px rgba(0, 0, 0, 0.1), -4px -4px 8px -2px rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.neumorphic-btn:hover {
+  box-shadow: 6px 6px 12px -2px rgba(0, 0, 0, 0.15), -6px -6px 12px -2px rgba(255, 255, 255, 0.9);
+  transform: translateY(2px);
+}
+
+.neumorphic-input {
+  background: var(--surface);
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 6px -2px rgba(0, 0, 0, 0.1), -3px -3px 6px -2px rgba(255, 255, 255, 0.8);
+}
+
+.neumorphic-input:focus {
+  outline: none;
+  border-color: #0891b2;
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+}
+
+/* Modern card hover effects */
+.modern-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 16px;
+}
+
+.modern-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(8, 145, 178, 0.1);
+}
+
+/* Premium gradient text */
+.gradient-text {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Neon accent glow */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(8, 145, 178, 0.4), 0 0 40px rgba(8, 145, 178, 0.2);
+}
+
 body {
-  background-color: #ffffff;
-  color: #0f172a; /* slate-900 for good contrast */
+  background-color: var(--surface);
+  color: #0f172a;
 }

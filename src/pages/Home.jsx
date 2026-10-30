@@ -17,7 +17,7 @@ export default function Home() {
   useScrollToTop()
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-blue-50 text-gray-900 overflow-hidden">
+    <div className="min-h-screen hero-bg overflow-hidden">
 
       {/* Navbar */}
       <Navbar />

@@ -28,7 +28,7 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm glass-card"
     >
       <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
 
@@ -37,14 +37,14 @@ export default function Navbar() {
 
           <motion.img
             src={logo}
-            alt="Sapphire Infotech Solutions — home"
+            alt="CRESCENT TECHWORKS INNOVATIONS LLP — home"
             className="h-12 md:h-14 w-auto object-contain"
             whileHover={{ scale: 1.05 }}
             transition={{ type: 'spring', stiffness: 300 }}
           />
 
           <span className="text-slate-900 text-xl font-black tracking-tight">
-            SAPPHIRE <span className="text-blue-600">INFOTECH SOLUTIONS</span>
+            CRESCENT <span className="text-blue-600">TECHWORKS</span>
           </span>
         </Link>
 
@@ -104,7 +104,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t shadow-md"
+            className="md:hidden bg-white border-t shadow-md glass-card"
           >
             <div className="px-6 py-5 flex flex-col gap-4">
               {navLinks.map((link) => (

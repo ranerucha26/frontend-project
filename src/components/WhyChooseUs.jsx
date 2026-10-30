@@ -126,7 +126,7 @@ function FlipCard({ card, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.7, delay: index * 0.12, ease: 'easeOut' }}
-      className="relative w-full aspect-square max-w-[280px] mx-auto"
+      className="relative w-full aspect-square max-w-[280px] mx-auto neumorphic-btn"
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
       onClick={() => setFlipped(f => !f)}
@@ -146,7 +146,7 @@ function FlipCard({ card, index }) {
       >
         {/* Front */}
         <div
-          className="absolute inset-0 rounded-[16px] p-8 flex flex-col items-center justify-center text-center overflow-hidden bg-white border border-slate-200"
+          className="absolute inset-0 rounded-[16px] p-8 flex flex-col items-center justify-center text-center overflow-hidden bg-white border border-slate-200 neumorphic-btn"
           style={{
             boxShadow: `0 10px 25px -5px rgba(0,0,0,0.03), 0 0 1px rgba(0,0,0,0.05), 0 0 30px ${card.color}14`,
             backfaceVisibility: 'hidden',
@@ -162,13 +162,13 @@ function FlipCard({ card, index }) {
           >
             <Icon className="w-8 h-8" />
           </motion.div>
-          <h3 className="text-slate-900 text-xl font-bold tracking-wide">{card.title}</h3>
+          <h3 className="gradient-text text-slate-900 text-xl font-bold tracking-wide">{card.title}</h3>
           <p className="text-slate-400 text-xs mt-3 font-medium">Hover to view details</p>
         </div>
 
         {/* Back */}
         <div
-          className="absolute inset-0 rounded-[16px] p-6 flex flex-col items-center justify-center text-center overflow-hidden bg-slate-900"
+          className="absolute inset-0 rounded-[16px] p-6 flex flex-col items-center justify-center text-center overflow-hidden bg-slate-900 neumorphic-btn"
           style={{
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)',
@@ -182,7 +182,7 @@ function FlipCard({ card, index }) {
             <div className="flex justify-center mb-4" style={{ color: card.color }}>
               <Icon size={22} />
             </div>
-            <p className="text-white text-[15px] font-medium leading-[1.7]">{card.description}</p>
+            <p className="gradient-text text-white text-[15px] font-medium leading-[1.7]">{card.description}</p>
           </div>
         </div>
       </motion.div>

@@ -127,7 +127,7 @@ export default function TermsOfService() {
                 1. Agreement to Terms
               </h2>
               <p className="mb-5">
-                By accessing and using Sapphire Infotech Solutions's website and services, you agree to be 
+                By accessing and using CRESCENT TECHWORKS INNOVATIONS LLP's website and services, you agree to be 
                 bound by these Terms of Service. If you do not agree to abide by the above, 
                 please do not use this service.
               </p>
@@ -139,7 +139,7 @@ export default function TermsOfService() {
               </h2>
               <p className="mb-5">
                 Permission is granted to temporarily download one copy of the materials (information 
-                or software) on Sapphire Infotech Solutions's website for personal, non-commercial transitory 
+                or software) on CRESCENT TECHWORKS INNOVATIONS LLP's website for personal, non-commercial transitory 
                 viewing only. This is the grant of a license, not a transfer of title, and under this 
                 license you may not:
               </p>
@@ -157,8 +157,8 @@ export default function TermsOfService() {
                 3. Disclaimer of Warranties
               </h2>
               <p className="mb-5">
-                The materials on Sapphire Infotech Solutions's website are provided on an 'as is' basis. 
-                Sapphire Infotech Solutions makes no warranties, expressed or implied, and hereby disclaims 
+                The materials on CRESCENT TECHWORKS INNOVATIONS LLP's website are provided on an 'as is' basis. 
+                CRESCENT TECHWORKS INNOVATIONS LLP makes no warranties, expressed or implied, and hereby disclaims 
                 and negates all other warranties including, without limitation, implied warranties 
                 or conditions of merchantability, fitness for a particular purpose, or non-infringement 
                 of intellectual property or other violation of rights.
@@ -170,10 +170,10 @@ export default function TermsOfService() {
                 4. Limitations of Liability
               </h2>
               <p className="mb-5">
-                In no event shall Sapphire Infotech Solutions or its suppliers be liable for any damages 
+                In no event shall CRESCENT TECHWORKS INNOVATIONS LLP or its suppliers be liable for any damages 
                 (including, without limitation, damages for loss of data or profit, or due to business 
                 interruption) arising out of the use or inability to use the materials on 
-                Sapphire Infotech Solutions's website.
+                CRESCENT TECHWORKS INNOVATIONS LLP's website.
               </p>
             </div>
 
@@ -182,7 +182,7 @@ export default function TermsOfService() {
                 5. Indemnification
               </h2>
               <p className="mb-5">
-                You agree to indemnify and hold harmless Sapphire Infotech Solutions and its officers, directors, 
+                You agree to indemnify and hold harmless CRESCENT TECHWORKS INNOVATIONS LLP and its officers, directors, 
                 employees, agents, and successors from and against any and all claims, damages, losses, 
                 and expenses arising out of your use of the website or services.
               </p>
@@ -208,8 +208,8 @@ export default function TermsOfService() {
                 7. Intellectual Property Rights
               </h2>
               <p className="mb-5">
-                All materials on Sapphire Infotech Solutions's website, including but not limited to text, 
-                graphics, logos, images, and software, are the property of Sapphire Infotech Solutions or its 
+                All materials on CRESCENT TECHWORKS INNOVATIONS LLP's website, including but not limited to text, 
+                graphics, logos, images, and software, are the property of CRESCENT TECHWORKS INNOVATIONS LLP or its 
                 content suppliers and are protected by international copyright laws.
               </p>
             </div>
@@ -219,9 +219,9 @@ export default function TermsOfService() {
                 8. Third-Party Links
               </h2>
               <p className="mb-5">
-                Sapphire Infotech Solutions has not reviewed all of the sites linked to its website and is 
+                CRESCENT TECHWORKS INNOVATIONS LLP has not reviewed all of the sites linked to its website and is 
                 not responsible for the contents of any such linked site. The inclusion of any link 
-                does not imply endorsement by Sapphire Infotech Solutions of the site. Use of any such linked 
+                does not imply endorsement by CRESCENT TECHWORKS INNOVATIONS LLP of the site. Use of any such linked 
                 website is at the user's own risk.
               </p>
             </div>
@@ -231,7 +231,7 @@ export default function TermsOfService() {
                 9. Service Modifications
               </h2>
               <p className="mb-5">
-                Sapphire Infotech Solutions may revise these terms of service for its website at any time 
+                CRESCENT TECHWORKS INNOVATIONS LLP may revise these terms of service for its website at any time 
                 without notice. By using this website, you are agreeing to be bound by the then 
                 current version of these terms of service.
               </p>

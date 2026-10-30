@@ -125,13 +125,13 @@ export default function PrivacyPolicy() {
                 1. Introduction
               </h2>
               <p className="mb-5">
-                At Sapphire Infotech Solutions, we take your privacy seriously. This Privacy Policy explains 
+                At CRESCENT TECHWORKS INNOVATIONS LLP, we take your privacy seriously. This Privacy Policy explains 
                 how we collect, use, disclose, and safeguard your information when you visit our 
                 website and use our services.
               </p>
               <p className="mb-5">
                 Please read this Privacy Policy carefully. If you do not agree with our policies and 
-                practices, please do not use our Services. By accessing and using Sapphire Infotech Solutions, 
+                practices, please do not use our Services. By accessing and using CRESCENT TECHWORKS INNOVATIONS LLP, 
                 you acknowledge that you have read, understood, and agree to be bound by all the 
                 provisions of this Privacy Policy.
               </p>

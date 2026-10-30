@@ -279,7 +279,7 @@ export default function About() {
                       backgroundClip: 'text',
                     }}
                   >
-                    Sapphire Infotech Solutions
+                    CRESCENT TECHWORKS INNOVATIONS LLP
                   </span>
                 </h1>
 
@@ -668,7 +668,7 @@ export default function About() {
 
               <div className="space-y-6 text-slate-600 font-medium leading-relaxed text-lg">
                 <p>
-                  Founded in <span className="text-slate-900 font-bold">2022</span> by a group of passionate developers and designers, Sapphire Infotech Solutions began with a simple vision: to craft high-performance digital experiences that truly matter to the people who use them.
+                  Founded in <span className="text-slate-900 font-bold">2022</span> by a group of passionate developers and designers, CRESCENT TECHWORKS INNOVATIONS LLP began with a simple vision: to craft high-performance digital experiences that truly matter to the people who use them.
                 </p>
                 <p>
                   In just <span className="text-blue-600 font-bold">1+ years</span>, we've grown into a dynamic studio of <span className="text-slate-900 font-bold">25+ expert professionals</span> - developers, designers, and strategists - all united by an unwavering commitment to excellence and innovation.

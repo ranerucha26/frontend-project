@@ -114,7 +114,7 @@ export default function Contact() {
                   href={item.link}
                   target={item.title === 'Location' ? '_blank' : undefined}
                   rel={item.title === 'Location' ? 'noopener noreferrer' : undefined}
-                  className="text-center p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer"
+                  className="text-center p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer neumorphic-btn"
                 >
                   <div className="text-4xl mb-3">{item.icon}</div>
                   <h4 className="text-slate-900 font-bold text-lg mb-1">{item.title}</h4>

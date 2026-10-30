@@ -16,13 +16,13 @@ function buildOrganizationSchema() {
     '@type': 'Organization',
     '@id': `${SITE_URL}/#organization`,
     name: SITE_NAME,
-    alternateName: ['Sapphire Infotech', 'Sapphire Infotech Solutions'],
+    alternateName: ['CRESCENT TECHWORKS', 'CRESCENT TECHWORKS Solutions'],
     url: SITE_URL,
     logo: `${SITE_URL}/favicon.svg`,
     email: SITE_EMAIL,
     telephone: SITE_PHONE,
     description:
-      'Sapphire Infotech Solutions is a Mumbai-based software company offering web development, mobile apps, UI/UX design, cloud, and DevOps services.',
+      'CRESCENT TECHWORKS INNOVATIONS LLP is a Mumbai-based digital company offering web development, mobile apps, UI/UX design, cloud, and DevOps services.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: SITE_ADDRESS.addressLocality,

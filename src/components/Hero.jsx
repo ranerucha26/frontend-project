@@ -131,7 +131,7 @@ const TechEcosystem = () => {
                 <span className="text-pink-500">import</span>
                 <span className="text-cyan-400">{"{ scalable, robust }"}</span>
                 <span className="text-pink-500">from</span>
-                <span className="text-emerald-400">'Sapphire Infotech Solutions'</span>
+                <span className="text-emerald-400">'CRESCENT TECHWORKS INNOVATIONS LLP'</span>
               </div>
               <div className="flex items-center gap-2 pl-4">
                 <span className="text-blue-400">const</span>
@@ -261,7 +261,7 @@ export default function Hero() {
   className="mb-4"
 >
   <div className="inline-flex items-center justify-center px-5 py-2 rounded-full border-2 border-cyan-200 bg-cyan-50 text-sky-800 font-bold uppercase tracking-wider shadow-sm">
-    Sapphire Infotech Solutions
+    CRESCENT TECHWORKS INNOVATIONS LLP
   </div>
 </motion.div>
             <motion.h1
@@ -285,7 +285,7 @@ export default function Hero() {
               custom={0.3}
               className="space-y-2 mb-10 text-slate-600 font-medium text-base md:text-lg leading-relaxed"
             >
-              <p>Sapphire Infotech Solutions builds high-performance websites and mobile applications that drive real business results.</p>
+              <p>CRESCENT TECHWORKS INNOVATIONS LLP builds high-performance websites and mobile applications that drive real business results.</p>
               <p>We partner with you from concept to launch — understanding your goals, designing scalable solutions, and delivering on time.</p>
               <p>Focus on growing your business while we handle the technical complexity with proven expertise and reliable support.</p>
             </motion.div>

@@ -329,7 +329,7 @@ export default function AboutPreview() {
                   'linear-gradient(135deg,#06B6D4,#3B82F6,#8B5CF6)',
               }}
             >
-              Sapphire Infotech Solutions
+              CRESCENT TECHWORKS INNOVATIONS LLP
             </span>
           </h2>
         </motion.div>

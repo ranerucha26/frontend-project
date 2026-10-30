@@ -37,7 +37,7 @@ export default function TeamSpotlight() {
             </span>
           </h2>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mt-4">
-            The visionaries and technical experts driving Sapphire Infotech Solutions forward
+            The visionaries and technical experts driving CRESCENT TECHWORKS INNOVATIONS LLP forward
           </p>
         </motion.div>
 
@@ -104,7 +104,7 @@ export default function TeamSpotlight() {
             </h3>
 
             <p className="text-[15px] md:text-[16px] text-slate-600 leading-[1.8] mb-[32px] font-medium">
-              Entrepreneur and visionary leader with expertise in AI, machine learning, and business development. Successfully built and scaled Sapphire Infotech Solutions, establishing connections across marine institutes, RPSL companies, and maritime organizations. As Director of HPAY, continues to expand the digital ecosystem by leveraging technology to solve complex industry challenges.
+              Entrepreneur and visionary leader with expertise in AI, machine learning, and business development. Successfully built and scaled CRESCENT TECHWORKS INNOVATIONS LLP, establishing connections across marine institutes, RPSL companies, and maritime organizations. As Director of HPAY, continues to expand the digital ecosystem by leveraging technology to solve complex industry challenges.
             </p>
 
             <div className="flex flex-wrap justify-center md:justify-start gap-[12px] mb-[24px]">

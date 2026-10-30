@@ -3,13 +3,13 @@ export const SITE_URL = (
   import.meta.env.VITE_SITE_URL || 'https://sapphireinfotech.com'
 ).replace(/\/$/, '')
 
-export const SITE_NAME = 'Sapphire Infotech Solutions'
+export const SITE_NAME = 'CRESCENT TECHWORKS INNOVATIONS LLP'
 
 export const SITE_TAGLINE =
-  'Web development, mobile apps, UI/UX design, cloud & DevOps — software company in Mumbai, India.'
+  'Innovative digital solutions for the modern era — web, mobile, cloud, and AI.'
 
-export const SITE_EMAIL = 'hello@sapphireinfotech.com'
-export const SITE_PHONE = '+91 8080535352'
+export const SITE_EMAIL = 'hello@crescentechworks.com'
+export const SITE_PHONE = '+91 98765 43210'
 export const SITE_ADDRESS = {
   streetAddress: 'Mumbai',
   addressLocality: 'Mumbai',
@@ -18,10 +18,10 @@ export const SITE_ADDRESS = {
 }
 
 export const DEFAULT_KEYWORDS = [
-  'Sapphire Infotech Solutions',
-  'Sapphire Infotech',
-  'sapphire infotech solutions',
-  'software company Mumbai',
+  'CRESCENT TECHWORKS INNOVATIONS LLP',
+  'Crescent TechWorks',
+  'crescent techworks innovations LLP',
+  'digital solutions Mumbai',
   'web development company India',
   'mobile app development Mumbai',
   'UI UX design agency',

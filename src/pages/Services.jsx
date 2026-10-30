@@ -539,7 +539,7 @@ const FlipCard = ({ card, index }) => {
       >
         {/* Front Face */}
         <div 
-          className="absolute inset-0 w-full h-full rounded-[16px] p-8 flex flex-col items-center justify-center text-center overflow-hidden bg-white"
+          className="absolute inset-0 w-full h-full rounded-[16px] p-8 flex flex-col items-center justify-center text-center overflow-hidden bg-white neumorphic-btn"
           style={{
             border: `1px solid #e2e8f0`,
             boxShadow: `0 10px 25px -5px rgba(0,0,0,0.04)`,
@@ -802,7 +802,7 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative p-12 md:p-16 rounded-[2rem] overflow-hidden bg-white border border-slate-200 shadow-xl"
+              className="relative p-12 md:p-16 rounded-[2rem] overflow-hidden bg-white border border-slate-200 shadow-xl glass-card"
             >
               <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500" />
               
@@ -824,7 +824,7 @@ export default function Services() {
                 >
                   <Link
                   to="/contact"
-                  className="w-full sm:w-auto px-8 sm:px-12 py-5 sm:py-6 rounded-3xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xl sm:text-2xl font-bold text-center whitespace-normal leading-tight shadow-[0_12px_30px_rgba(37,99,235,0.35)] transition-all duration-300 mx-auto block"
+                  className="w-full sm:w-auto px-8 sm:px-12 py-5 sm:py-6 rounded-3xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xl sm:text-2xl font-bold text-center whitespace-normal leading-tight neumorphic-btn shadow-[0_12px_30px_rgba(37,99,235,0.35)] transition-all duration-300 mx-auto block"
                 >
                   Schedule a Consultation
                   </Link>
