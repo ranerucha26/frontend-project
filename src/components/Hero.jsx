@@ -260,8 +260,8 @@ export default function Hero() {
   custom={0}
   className="mb-4"
 >
-  <div className="inline-flex items-center justify-center px-5 py-2 rounded-full border-2 border-cyan-200 bg-cyan-50 text-sky-800 font-bold uppercase tracking-wider shadow-sm">
-    CRESCENT TECHWORKS INNOVATIONS LLP
+  <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-blue-200 bg-blue-50 text-blue-700 font-bold text-xs tracking-widest shadow-sm">
+    ✨ CRESCENT TECHWORKS INNOVATIONS LLP
   </div>
 </motion.div>
             <motion.h1
@@ -269,10 +269,10 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               custom={0.1}
-              className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-slate-900 mb-5"
+              className="text-5xl md:text-7xl font-black leading-tight tracking-tight text-slate-900 mb-6"
             >
               We Build{' '}
-              <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(to right, #0891B2, #2563EB, #7C3AED)' }}>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
                 Digital Experiences
               </span>
               <span> That Matter</span>
@@ -300,7 +300,7 @@ export default function Hero() {
                 href="#services"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 rounded-xl text-white font-bold text-base bg-blue-600 hover:bg-blue-700 shadow-xl shadow-blue-600/10 transition-colors duration-200 inline-block text-center"
+                className="px-8 py-4 rounded-full text-white font-bold text-base bg-gradient-to-r from-blue-600 to-cyan-500 hover:shadow-xl hover:shadow-blue-300 hover:scale-105 transition-all duration-300 inline-block text-center"
               >
                 Find out how
               </motion.a>
