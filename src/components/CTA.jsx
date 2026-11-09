@@ -4,238 +4,103 @@ import ContactForm from './ContactForm'
 
 export default function CTA() {
   const ref = useRef(null)
-
-  const isInView = useInView(ref, {
-    once: true,
-    amount: 0.1,
-  })
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   const trustIndicators = [
     {
-      label: 'Fast Delivery',
-
+      label: 'Rapid Sprints & On-Time Delivery',
       icon: (
-        <svg
-          className="w-5 h-5 text-cyan-500"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M13 10V3L4 14h7v7l9-11h-7z"
-          />
+        <svg className="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
     },
-
-
     {
-      label: '5-Star Rated',
-
+      label: '100% Code Ownership & IP Protection',
       icon: (
-        <svg
-          className="w-5 h-5 text-yellow-500"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
-          />
+        <svg className="w-5 h-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
     },
-
     {
-      label: '24/7 Support',
-
+      label: '24/7 Dedicated Engineering Support',
       icon: (
-        <svg
-          className="w-5 h-5 text-purple-500"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-          />
+        <svg className="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
         </svg>
       ),
     },
-  ]
-
-  const stats = [
-    { number: '25+', label: 'Expert Team' },
-    { number: '1+', label: 'Years Experience' }
   ]
 
   return (
-    <section
-      ref={ref}
-      className="relative w-full bg-gradient-to-b from-white to-blue-50 py-15 md:py-[100px] overflow-hidden bg-slate-50 py-15 md:py-[100px]"
-    >
-      {/* Background */}
-      <svg
-        className="absolute inset-0 w-full h-full z-0 pointer-events-none"
-        style={{ opacity: 0.03 }}
-      >
-        <defs>
-          <pattern
-            id="dotCTA"
-            x="0"
-            y="0"
-            width="30"
-            height="30"
-            patternUnits="userSpaceOnUse"
-          >
-            <circle cx="1.5" cy="1.5" r="1.5" fill="#0f172a" />
-          </pattern>
-        </defs>
+    <section id="contact" ref={ref} className="relative py-20 sm:py-28 overflow-hidden">
+      {/* Background Ambience */}
+      <div className="absolute top-1/2 right-1/4 w-[600px] h-[500px] bg-cyan-600/10 rounded-full blur-[170px] pointer-events-none" />
 
-        <rect width="100%" height="100%" fill="url(#dotCTA)" />
-      </svg>
-
-      {/* Glow */}
-      <div
-        className="absolute top-0 right-0 w-[800px] h-[800px] rounded-full pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(circle, rgba(59,130,246,0.06), transparent 60%)',
-
-          filter: 'blur(80px)',
-        }}
-      />
-
-      <div
-        className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(circle, rgba(6,182,212,0.06), transparent 60%)',
-
-          filter: 'blur(80px)',
-        }}
-      />
-
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-[40px] lg:px-[80px]">
-
-        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-[100px] items-start">
-
-          {/* LEFT */}
-          <div className="w-full flex flex-col justify-center items-center h-full text-center">
-
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{
-                duration: 0.7,
-                ease: 'easeOut',
-              }}
-            >
-              <div className="inline-block text-cyan-500 text-[12px] font-bold uppercase tracking-[1px] mb-4 bg-cyan-50 px-3 py-1.5 rounded-full border border-cyan-200">
-                Let's Talk
-              </div>
-
-              <h2 className="text-[36px] md:text-[44px] font-bold leading-[1.2] mb-6 tracking-tight">
-
-                <div className="text-gray-900">
-                  Ready to Transform Your
-                </div>
-
-                <div
-                  className="bg-clip-text text-transparent"
-                  style={{
-                    backgroundImage:
-                      'linear-gradient(135deg,#06B6D4,#3B82F6,#8B5CF6)',
-                  }}
-                >
-                  Digital Presence?
-                </div>
-              </h2>
-
-              <p className="text-[16px] text-gray-600 leading-[1.8] mb-[40px] max-w-lg mx-auto">
-                Let's discuss how our expert team and
-                cutting-edge solutions can help your business
-                scale to new heights.
-              </p>
-            </motion.div>
-
-            {/* Trust */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.7,
-                delay: 0.2,
-                ease: 'easeOut',
-              }}
-
-              className="flex flex-wrap justify-center gap-[24px] xl:gap-[30px] mb-[40px]"
-            >
-              {trustIndicators.map((item, idx) => (
-                <div key={idx} className="flex items-center gap-2">
-                  {item.icon}
-
-                  <span className="text-[14px] font-medium text-gray-600">
-                    {item.label}
-                  </span>
-                </div>
-              ))}
-            </motion.div>
-
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.7,
-                delay: 0.4,
-                ease: 'easeOut',
-              }}
-
-              className="flex justify-between items-center w-full max-w-lg mx-auto pt-[24px] border-t border-blue-100"
-            >
-              {stats.map((stat, idx) => (
-                <div
-                  key={idx}
-                  className="flex-1 text-center relative"
-                >
-                  {idx !== 0 && (
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-8 bg-blue-100" />
-                  )}
-
-                  <div className="text-[24px] font-bold text-gray-900 mb-1">
-                    {stat.number}
-                  </div>
-
-                  <div className="text-[12px] text-gray-500 uppercase tracking-[0.5px]">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* RIGHT FORM */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+          
+          {/* Left Column: Heading & Value Prop (5 cols) */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{
-              duration: 0.6,
-              delay: 0.1,
-              ease: 'easeOut',
-            }}
-            className="w-full relative"
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 flex flex-col items-start"
           >
-            <ContactForm isInView={isInView} />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-950/40 text-cyan-300 font-mono text-xs tracking-wider uppercase mb-5 shadow-sm shadow-cyan-950">
+              <span>Initiate Partnership</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-6 leading-tight">
+              Ready to Transform Your{' '}
+              <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">
+                Digital Presence?
+              </span>
+            </h2>
+
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-light mb-8">
+              Let's discuss how our modern stack and cutting-edge digital solutions can help you launch faster, 
+              delight users, and outperform your competitors.
+            </p>
+
+            {/* Trust Indicators */}
+            <div className="space-y-4 mb-10 w-full">
+              {trustIndicators.map((item, idx) => (
+                <div 
+                  key={idx}
+                  className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-900/40 border border-white/[0.06] backdrop-blur-md"
+                >
+                  <div className="w-9 h-9 rounded-xl bg-slate-800/80 border border-white/10 flex items-center justify-center flex-shrink-0">
+                    {item.icon}
+                  </div>
+                  <span className="text-sm font-medium text-slate-200">{item.label}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Stats Row */}
+            <div className="flex items-center gap-8 pt-6 border-t border-white/[0.08] w-full">
+              <div>
+                <div className="text-2xl font-black text-white">25+</div>
+                <div className="text-xs text-slate-400 font-mono">Expert Engineers</div>
+              </div>
+              <div className="h-8 w-px bg-white/10" />
+              <div>
+                <div className="text-2xl font-black text-cyan-400">100%</div>
+                <div className="text-xs text-slate-400 font-mono">SLA Guarantee</div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Column: Contact Form (7 cols) */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+            className="lg:col-span-7 w-full"
+          >
+            <ContactForm isInView={isInView} showCardHeader={true} />
           </motion.div>
 
         </div>

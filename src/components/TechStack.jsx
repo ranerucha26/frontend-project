@@ -1,31 +1,31 @@
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 
 const technologies = [
-  // Frontend (blue glow)
-  { name: 'React', icon: 'devicon-react-original', category: 'Frontend', color: '#3B82F6', description: 'A JavaScript library for building user interfaces' },
-  { name: 'Flutter', icon: 'devicon-flutter-plain', category: 'Frontend', color: '#3B82F6', description: 'Google\'s UI toolkit for beautiful apps' },
-  { name: 'Tailwind CSS', icon: 'devicon-tailwindcss-plain', category: 'Frontend', color: '#3B82F6', description: 'Utility-first CSS framework' },
+  // Frontend
+  { name: 'React', icon: 'devicon-react-original', category: 'Frontend', color: '#38BDF8', description: 'Modern UI & Component Architecture' },
+  { name: 'Flutter', icon: 'devicon-flutter-plain', category: 'Frontend', color: '#38BDF8', description: "Google's UI toolkit for high-performance apps" },
+  { name: 'Tailwind CSS', icon: 'devicon-tailwindcss-plain', category: 'Frontend', color: '#06B6D4', description: 'Utility-first modern CSS framework' },
   
-  // Backend (cyan glow)
-  { name: 'Node.js', icon: 'devicon-nodejs-plain', category: 'Backend', color: '#06B6D4', description: 'JavaScript runtime built on Chrome\'s V8 engine' },
-  { name: 'Express.js', icon: 'devicon-express-original', category: 'Backend', color: '#06B6D4', description: 'Fast, unopinionated web framework for Node.js' },
-  { name: 'Django', icon: 'devicon-django-plain', category: 'Backend', color: '#06B6D4', description: 'High-level Python web framework' },
+  // Backend
+  { name: 'Node.js', icon: 'devicon-nodejs-plain', category: 'Backend', color: '#10B981', description: "JavaScript runtime built on Chrome's V8 engine" },
+  { name: 'Express.js', icon: 'devicon-express-original', category: 'Backend', color: '#94A3B8', description: 'Fast, unopinionated web framework for Node.js' },
+  { name: 'Django', icon: 'devicon-django-plain', category: 'Backend', color: '#059669', description: 'High-level Python web framework' },
   
-  // Database (pink glow)
-  { name: 'MongoDB', icon: 'devicon-mongodb-plain', category: 'Database', color: '#ec4899', description: 'NoSQL document-oriented database' },
-  { name: 'SQLite', icon: 'devicon-sqlite-plain', category: 'Database', color: '#ec4899', description: 'Self-contained SQL database engine' },
-  { name: 'PostgreSQL', icon: 'devicon-postgresql-plain', category: 'Database', color: '#ec4899', description: 'Powerful open source relational database' },
+  // Database
+  { name: 'MongoDB', icon: 'devicon-mongodb-plain', category: 'Database', color: '#10B981', description: 'Scalable NoSQL document-oriented database' },
+  { name: 'SQLite', icon: 'devicon-sqlite-plain', category: 'Database', color: '#60A5FA', description: 'Self-contained lightweight SQL engine' },
+  { name: 'PostgreSQL', icon: 'devicon-postgresql-plain', category: 'Database', color: '#3B82F6', description: 'Enterprise open-source relational database' },
   
-  // DevOps (purple glow)
-  { name: 'Docker', icon: 'devicon-docker-plain', category: 'DevOps', color: '#a855f7', description: 'Platform for developing and running applications' },
-  { name: 'AWS', icon: 'devicon-amazonwebservices-plain-wordmark', category: 'DevOps', color: '#a855f7', description: 'Amazon Web Services cloud platform' },
-  { name: 'Git', icon: 'devicon-git-plain', category: 'DevOps', color: '#a855f7', description: 'Distributed version control system' },
-  { name: 'CI/CD', icon: 'devicon-githubactions-plain', category: 'DevOps', color: '#a855f7', description: 'Continuous Integration and Deployment' },
+  // DevOps
+  { name: 'Docker', icon: 'devicon-docker-plain', category: 'DevOps', color: '#0284C7', description: 'Platform for developing and shipping applications' },
+  { name: 'AWS Cloud', icon: 'devicon-amazonwebservices-plain-wordmark', category: 'DevOps', color: '#F59E0B', description: 'Amazon Web Services elastic cloud platform' },
+  { name: 'Git & GitHub', icon: 'devicon-git-plain', category: 'DevOps', color: '#F97316', description: 'Distributed version control & CI workflow' },
+  { name: 'CI / CD', icon: 'devicon-githubactions-plain', category: 'DevOps', color: '#8B5CF6', description: 'Continuous integration and automated delivery' },
   
-  // Design (orange glow)
-  { name: 'Figma', icon: 'devicon-figma-plain', category: 'Design', color: '#f97316', description: 'Collaborative interface design tool' },
-  { name: 'Adobe XD', icon: 'devicon-xd-plain', category: 'Design', color: '#f97316', description: 'Vector-based UX design tool' },
+  // Design
+  { name: 'Figma', icon: 'devicon-figma-plain', category: 'Design', color: '#EC4899', description: 'Collaborative cloud interface design tool' },
+  { name: 'Adobe XD', icon: 'devicon-xd-plain', category: 'Design', color: '#F43F5E', description: 'Vector-based UI/UX prototype design tool' },
 ]
 
 const containerVariants = {
@@ -33,50 +33,124 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.2,
+      staggerChildren: 0.05,
+      delayChildren: 0.1,
     },
   },
 }
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    scale: 1,
+    transition: { duration: 0.4, ease: 'easeOut' },
   },
 }
 
-const floatAnimation = {
-  animate: {
-    y: [-6, 6, -6],
-    transition: {
-      duration: 5,
-      repeat: Infinity,
-      ease: 'easeInOut',
-    },
-  },
+function TechCard({ tech }) {
+  const [isHovered, setIsHovered] = useState(false)
+
+  return (
+    <motion.div
+      variants={cardVariants}
+      className="relative flex justify-center"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Tooltip on Hover */}
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0, y: -5, scale: 0.95 }}
+            animate={{ opacity: 1, y: -16, scale: 1 }}
+            exit={{ opacity: 0, y: -5, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="absolute -top-16 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none"
+          >
+            <div className="bg-slate-900/95 backdrop-blur-xl text-white px-4 py-2.5 rounded-2xl border border-cyan-500/40 shadow-2xl shadow-cyan-950/70 text-center min-w-[170px] max-w-[230px]">
+              <div className="font-bold text-xs text-cyan-300 font-mono tracking-wide">{tech.name}</div>
+              <div className="text-slate-300 text-[11px] mt-1 leading-snug font-light">{tech.description}</div>
+              
+              {/* Arrow */}
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full">
+                <div className="w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-transparent border-t-cyan-500/50"></div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Main Card */}
+      <motion.div
+        whileHover={{ scale: 1.05, y: -4 }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+        className="w-36 h-36 sm:w-40 sm:h-40 rounded-2xl p-4 sm:p-5 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 relative group overflow-hidden"
+        style={{
+          background: isHovered 
+            ? `radial-gradient(circle at center, ${tech.color}18, rgba(15, 23, 42, 0.8) 75%)` 
+            : 'rgba(15, 23, 42, 0.65)',
+          border: isHovered 
+            ? `1px solid ${tech.color}80` 
+            : '1px solid rgba(255, 255, 255, 0.08)',
+          boxShadow: isHovered 
+            ? `0 15px 35px -10px ${tech.color}40, 0 0 20px ${tech.color}20` 
+            : '0 10px 25px rgba(0, 0, 0, 0.3)',
+          backdropFilter: 'blur(16px)',
+        }}
+      >
+        {/* Subtle Category Pill on Top Right */}
+        <span 
+          className="absolute top-2.5 right-2.5 text-[9px] font-mono uppercase tracking-widest px-1.5 py-0.5 rounded-full"
+          style={{
+            backgroundColor: `${tech.color}15`,
+            color: isHovered ? tech.color : '#94a3b8',
+            border: `1px solid ${tech.color}30`,
+          }}
+        >
+          {tech.category}
+        </span>
+
+        {/* Devicon Icon */}
+        <div className="relative mb-2 flex items-center justify-center">
+          <i
+            className={`${tech.icon} text-4xl sm:text-5xl transition-all duration-300`}
+            style={{
+              color: isHovered ? tech.color : '#cbd5e1',
+              filter: isHovered ? `drop-shadow(0 0 10px ${tech.color}60)` : 'none',
+            }}
+          />
+        </div>
+
+        {/* Tech Name */}
+        <span className="text-white text-xs sm:text-sm font-bold text-center tracking-tight mt-1 group-hover:text-cyan-300 transition-colors">
+          {tech.name}
+        </span>
+      </motion.div>
+    </motion.div>
+  )
 }
 
 export default function TechStack() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
   const [activeCategory, setActiveCategory] = useState('All')
   const [techCount, setTechCount] = useState(0)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   const categories = ['All', 'Frontend', 'Backend', 'Database', 'DevOps', 'Design']
 
-  const filteredTech = activeCategory === 'All' 
+  const filteredTechs = activeCategory === 'All' 
     ? technologies 
     : technologies.filter(t => t.category === activeCategory)
 
-  // Animated counter
-  React.useEffect(() => {
+  // Animated Counter
+  useEffect(() => {
     if (isInView) {
-      const targetCount = filteredTech.length
-      const duration = 2000
-      const steps = 60
+      const targetCount = filteredTechs.length
+      const duration = 1200
+      const steps = 30
       const increment = targetCount / steps
       let current = 0
       
@@ -92,288 +166,87 @@ export default function TechStack() {
       
       return () => clearInterval(timer)
     }
-  }, [isInView, filteredTech.length])
+  }, [isInView, filteredTechs.length])
 
   return (
-    <section 
-      ref={ref}
-      className="relative py-24 bg-[#f8fafc] overflow-hidden"
-      style={{ paddingTop: '40px', paddingBottom: '80px' }}
-    >
-      {/* Subtle Animated Background Spheres */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full"
-          style={{
-            background: 'radial-gradient(circle at 30% 30%, rgba(37,99,235,0.05), transparent 70%)',
-            filter: 'blur(60px)'
-          }}
-          animate={{
-            x: [0, 60, 0],
-            y: [0, -30, 0],
-            scale: [1, 1.08, 1]
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
+    <section id="tech-stack" ref={ref} className="relative py-20 sm:py-28 overflow-hidden">
+      {/* Background Ambience */}
+      <div className="absolute top-1/2 right-1/4 w-[600px] h-[400px] bg-cyan-600/10 rounded-full blur-[170px] pointer-events-none" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <motion.div
-          className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full"
-          style={{
-            background: 'radial-gradient(circle at 70% 70%, rgba(8,145,178,0.04), transparent 70%)',
-            filter: 'blur(5px)'
-          }}
-          animate={{
-            x: [0, -50, 0],
-            y: [0, 40, 0],
-            scale: [1, 1.12, 1]
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-      </div>
-
-      {/* Dot Grid Pattern */}
-      <svg 
-        className="absolute inset-0 w-full h-full z-0"
-        style={{ opacity: 0.06 }}
-      >
-        <defs>
-          <pattern id="dotGridTech" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1.5" fill="#94a3b8" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#dotGridTech)" />
-      </svg>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-8 mt-0.50">
-        {/* Premium Header */}
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-14"
         >
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-4 text-slate-900" style={{ letterSpacing: '-0.03em' }}>
-            <span>Technologies</span>{' '}
-            <span 
-              className="bg-clip-text text-transparent"
-              style={{ backgroundImage: 'linear-gradient(to right, #0891B2, #2563EB, #7C3AED)' }}
-            >
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-950/40 text-cyan-300 font-mono text-xs tracking-wider uppercase mb-4 shadow-sm shadow-cyan-950">
+            <span>Tech Ecosystem</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-5">
+            Technologies{' '}
+            <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">
               We Use
             </span>
           </h2>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto font-medium">
+
+          <p className="text-base sm:text-lg text-slate-400 leading-relaxed font-light mb-6">
             Built with cutting-edge stack components, reliable frameworks, and scalable development utilities.
           </p>
-          
-          {/* Animated Counter */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            className="mt-6"
-          >
-            <span 
-              className="text-3xl font-black bg-clip-text text-transparent"
-              style={{ backgroundImage: 'linear-gradient(to right, #0f172a, #2563eb)' }}
-            >
-              {techCount}+
-            </span>
-            <span className="text-slate-500 ml-2 text-lg font-bold">Tools & Frameworks Integrated</span>
-          </motion.div>
+
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-white/10 text-slate-300 text-xs font-mono">
+            <span className="text-cyan-400 font-bold text-sm">{techCount}+</span>
+            <span>Tools & Frameworks Integrated</span>
+          </div>
         </motion.div>
 
-        {/* Premium Filter Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mb-16"
-        >
-          {categories.map((category) => (
-            <motion.button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.96 }}
-              transition={{ duration: 0.2 }}
-              className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-200 ${
-                activeCategory === category
-                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/15 border border-blue-500'
-                  : 'bg-white text-slate-600 border border-slate-200 hover:border-slate-400 hover:text-slate-900 shadow-sm'
-              }`}
-            >
-              {category}
-            </motion.button>
-          ))}
-        </motion.div>
+        {/* Filter Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-14">
+          <div className="bg-slate-900/80 backdrop-blur-xl border border-white/[0.08] p-1.5 rounded-full flex flex-wrap justify-center gap-1 shadow-lg shadow-black/40">
+            {categories.map((cat) => {
+              const isActive = activeCategory === cat
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`relative px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${
+                    isActive ? 'text-white' : 'text-slate-400 hover:text-cyan-300'
+                  }`}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeTechFilterPill"
+                      className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full shadow-md shadow-cyan-500/30 -z-10"
+                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                    />
+                  )}
+                  {cat}
+                </button>
+              )
+            })}
+          </div>
+        </div>
 
-        {/* Tech Cards Grid */}
+        {/* Tech Cards Grid with Real Devicons and Hover Tooltips */}
         <AnimatePresence mode="wait">
-          <motion.div
+          <motion.div 
             key={activeCategory}
             variants={containerVariants}
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center"
-            style={{ maxWidth: '1400px', margin: '0 auto' }}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 justify-items-center"
           >
-            {filteredTech.map((tech, index) => (
-              <TechCard key={tech.name} tech={tech} index={index} />
+            {filteredTechs.map((tech) => (
+              <TechCard key={tech.name} tech={tech} />
             ))}
           </motion.div>
         </AnimatePresence>
+
       </div>
     </section>
-  )
-}
-
-function TechCard({ tech, index }) {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const [isHovered, setIsHovered] = useState(false)
-  
-  const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect()
-    const x = (e.clientX - rect.left) / rect.width - 0.5
-    const y = (e.clientY - rect.top) / rect.height - 0.5
-    setMousePosition({ x, y })
-  }
-
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
-
-  return (
-    <motion.div
-      variants={cardVariants}
-      className="group"
-      style={{ perspective: 1000 }}
-    >
-      <motion.div
-        onMouseMove={handleMouseMove}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        whileHover={!isMobile ? {
-          scale: 1.05,
-          rotateX: 5,
-          rotateY: 8,
-          y: -5,
-        } : {
-          scale: 1.05,
-          y: -5,
-        }}
-        whileTap={{ scale: 0.98 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
-        className="relative"
-        style={{ transformStyle: 'preserve-3d' }}
-      >
-        <motion.div
-          variants={floatAnimation}
-          animate="animate"
-          style={{ 
-            transformStyle: 'preserve-3d',
-            transform: 'translateZ(0)'
-          }}
-        >
-          {/* Tooltip on hover */}
-          <AnimatePresence>
-            {isHovered && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: -15 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.2 }}
-                className="absolute -top-14 left-1/2 transform -translate-x-1/2 z-50 shadow-md"
-              >
-                <div className="bg-slate-900 text-white text-xs px-3 py-2 rounded-xl whitespace-nowrap border border-slate-800 text-center">
-                  <div className="font-bold text-sm">{tech.name}</div>
-                  <div className="text-slate-300 text-xs mt-0.5 max-w-[180px] whitespace-normal leading-tight">{tech.description}</div>
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full">
-                    <div className="w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-900"></div>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* Cards transformed into elegant Dark Blue layout */}
-          <div
-            className="w-full h-36 rounded-2xl p-6 flex flex-col items-center justify-center cursor-pointer border border-slate-800 bg-[#0b1329]"
-            style={{
-              width: '160px',
-              height: '160px',
-              borderRadius: '20px',
-              boxShadow: `0 10px 20px -5px rgba(11,19,41,0.3)`,
-              transition: 'all 0.4s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow = `0 15px 30px -10px ${tech.color}50, 0 0 15px ${tech.color}20`
-              e.currentTarget.style.borderColor = `${tech.color}80`
-              e.currentTarget.style.backgroundColor = '#0f1c3f'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow = `0 10px 20px -5px rgba(11,19,41,0.3)`
-              e.currentTarget.style.borderColor = `#1e293b`
-              e.currentTarget.style.backgroundColor = '#0b1329'
-            }}
-          >
-            {/* Icon Container */}
-            <div className="relative mb-2">
-              <div 
-                className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-400 bg-slate-900/60"
-                style={{
-                  border: `1px solid rgba(255,255,255,0.05)`,
-                  boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.3)'
-                }}
-              >
-                <i 
-                  className={`${tech.icon}`}
-                  style={{ 
-                    fontSize: '56px',
-                    color: isHovered ? tech.color : '#94a3b8',
-                    transition: 'color 0.3s ease',
-                    filter: isHovered ? `drop-shadow(0 0 6px ${tech.color}40)` : 'none'
-                  }}
-                />
-              </div>
-              
-              {/* Floating particles */}
-              {[...Array(3)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-1.5 h-1.5 rounded-full"
-                  style={{
-                    background: tech.color,
-                    top: `${8 + i * 12}px`,
-                    left: `${64 + i * 4}px`
-                  }}
-                  animate={{
-                    x: [0, Math.random() * 10 - 5, 0],
-                    y: [0, Math.random() * 10 - 5, 0],
-                    opacity: [0, 0.7, 0]
-                  }}
-                  transition={{
-                    duration: 4 + i,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
-              ))}
-            </div>
-            
-            {/* Tech Name */}
-            <span className="text-white text-sm font-bold text-center mt-2">
-              {tech.name}
-            </span>
-          </div>
-        </motion.div>
-      </motion.div>
-    </motion.div>
   )
 }

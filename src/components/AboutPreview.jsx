@@ -1,34 +1,16 @@
-import {
-  motion,
-  useInView,
-  animate,
-  useMotionValue,
-  useTransform,
-} from 'framer-motion'
-
-import { useRef, useState, useEffect } from 'react'
+import { motion, useInView, animate, useMotionValue, useTransform } from 'framer-motion'
+import { useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function AnimatedCounter({ from = 0, to, suffix = '' }) {
   const count = useMotionValue(from)
-
-  const rounded = useTransform(
-    count,
-    (latest) => Math.round(latest) + suffix
-  )
-
+  const rounded = useTransform(count, (latest) => Math.round(latest) + suffix)
   const ref = useRef(null)
-
-  const isInView = useInView(ref, {
-    once: true,
-    margin: '-50px',
-  })
+  const isInView = useInView(ref, { once: true, margin: '-50px' })
 
   useEffect(() => {
     if (isInView) {
-      animate(count, to, {
-        duration: 2,
-        ease: 'easeOut',
-      })
+      animate(count, to, { duration: 2, ease: 'easeOut' })
     }
   }, [isInView, to, count])
 
@@ -39,355 +21,135 @@ const stats = [
   {
     numericValue: 25,
     suffix: '+',
-    label: 'Expert Team Members',
-    color: '59,130,246',
-    borderStr: 'rgba(59,130,246,0.25)',
-    gradient:
-      'linear-gradient(135deg, rgba(59,130,246,0.12), rgba(6,182,212,0.08))',
-
-    icon: (
-      <svg
-        className="w-6 h-6 md:w-9 md:h-9 text-blue-500"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-        />
-      </svg>
-    ),
+    label: 'Expert Engineers & Designers',
+    color: '#06B6D4',
   },
-
   {
-    numericValue: 1,
+    numericValue: 20,
     suffix: '+',
-    label: 'Years of Experience',
-    color: '251,191,36',
-    borderStr: 'rgba(251,191,36,0.25)',
-    gradient:
-      'linear-gradient(135deg, rgba(251,191,36,0.12), rgba(245,158,11,0.08))',
-
-    icon: (
-      <svg
-        className="w-6 h-6 md:w-9 md:h-9 text-yellow-500"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-        />
-      </svg>
-    ),
+    label: 'Successful Digital Deployments',
+    color: '#3B82F6',
   },
-
   {
     numericValue: 15,
     suffix: '+',
-    label: 'Happy Clients',
-    color: '236,72,153',
-    borderStr: 'rgba(236,72,153,0.25)',
-    gradient:
-      'linear-gradient(135deg, rgba(236,72,153,0.12), rgba(244,114,182,0.08))',
-
-    icon: (
-      <svg
-        className="w-6 h-6 md:w-9 md:h-9 text-pink-500"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-        />
-      </svg>
-    ),
+    label: 'Enterprise & Startup Clients',
+    color: '#A855F7',
+  },
+  {
+    numericValue: 99,
+    suffix: '%',
+    label: 'Client Satisfaction Index',
+    color: '#10B981',
   },
 ]
 
-const values = [
-  {
-    title: 'Innovation-driven approach',
-
-    icon: (
-      <svg
-        className="w-6 h-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M13 10V3L4 14h7v7l9-11h-7z"
-        />
-      </svg>
-    ),
-  },
-
-  {
-    title: 'Agile development methodology',
-
-    icon: (
-      <svg
-        className="w-6 h-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-        />
-      </svg>
-    ),
-  },
-
-  {
-    title: '24/7 support and maintenance',
-
-    icon: (
-      <svg
-        className="w-6 h-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
-        />
-      </svg>
-    ),
-  },
-
-  {
-    title: 'Transparent communication',
-
-    icon: (
-      <svg
-        className="w-6 h-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-        />
-      </svg>
-    ),
-  },
+const highlights = [
+  'Architectural excellence & clean code standards',
+  'Agile sprint cycles with transparent reporting',
+  '24/7 mission-critical maintenance & SLA support',
+  'End-to-end security & compliance first mind-set',
 ]
-
-function StatCard({ stat, index }) {
-  const [hovered, setHovered] = useState(false)
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{
-        duration: 0.7,
-        delay: 0.15 * index,
-        ease: 'easeOut',
-      }}
-
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-
-      className="relative flex flex-col justify-center items-center text-center p-2.5 md:p-[20px] rounded-[18px] md:rounded-[24px] transition-all duration-400 w-full min-h-[140px] md:min-h-[260px] overflow-hidden bg-white border border-gray-200 shadow-xl"
-      style={{
-        boxShadow: hovered
-          ? `0 20px 60px rgba(${stat.color}, 0.18)`
-          : `0 10px 30px rgba(0,0,0,0.06)`,
-
-        transform: hovered
-          ? 'scale(1.05) translateY(-8px)'
-          : 'scale(1) translateY(0)',
-
-        borderColor: hovered
-          ? `rgba(${stat.color},0.5)`
-          : stat.borderStr,
-      }}
-    >
-      {/* Top Line */}
-      <div
-        className="absolute top-0 left-0 right-0 h-[4px]"
-        style={{
-          background: `rgba(${stat.color},0.8)`,
-        }}
-      />
-
-      {/* Icon */}
-      <motion.div
-        className="w-12 h-12 md:w-[80px] md:h-[80px] rounded-xl md:rounded-2xl flex items-center justify-center mb-1 md:mb-4 shrink-0"
-        style={{
-          background: stat.gradient,
-        }}
-
-        animate={{
-          y: hovered ? 0 : [-4, 4, -4],
-          rotate: hovered ? [0, 8, 0] : 0,
-        }}
-
-        transition={
-          hovered
-            ? { duration: 0.4 }
-            : {
-                duration: 4,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }
-        }
-      >
-        {stat.icon}
-      </motion.div>
-
-      {/* Number */}
-      <div className="text-lg md:text-[48px] font-bold text-gray-900 leading-none mt-1 md:mt-[16px] tracking-[1px]">
-        <AnimatedCounter to={stat.numericValue} suffix={stat.suffix} />
-      </div>
-
-      {/* Label */}
-      <div className="text-xs md:text-[16px] font-medium text-gray-600 mt-2 md:mt-[12px] tracking-[0.5px]">
-        {stat.label}
-      </div>
-    </motion.div>
-  )
-}
 
 export default function AboutPreview() {
   const ref = useRef(null)
-
-  const isInView = useInView(ref, {
-    once: true,
-    amount: 0.1,
-  })
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   return (
-    <section
-      ref={ref}
-      className="relative w-full bg-gradient-to-b from-white to-blue-50 py-[40px] overflow-hidden"
-    >
-      {/* Background Glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div
-          className="absolute top-20 left-10 w-[500px] h-[500px] rounded-full"
-          style={{
-            background:
-              'radial-gradient(circle, rgba(6,182,212,0.06), transparent 70%)',
+    <section id="about" ref={ref} className="relative py-20 sm:py-28 overflow-hidden">
+      {/* Ambience glow */}
+      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[150px] pointer-events-none" />
 
-            filter: 'blur(80px)',
-          }}
-        />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* Left Text Column (7 cols) */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 flex flex-col items-start"
+          >
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-950/40 text-cyan-300 font-mono text-xs tracking-wider uppercase mb-5 shadow-sm shadow-cyan-950">
+              <span>About Crescent Techworks</span>
+            </div>
 
-        <div
-          className="absolute bottom-10 right-10 w-[600px] h-[600px] rounded-full"
-          style={{
-            background:
-              'radial-gradient(circle, rgba(59,130,246,0.06), transparent 70%)',
+            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-6 leading-tight">
+              Crafting High-Performance{' '}
+              <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">
+                Digital Realities
+              </span>
+            </h2>
 
-            filter: 'blur(80px)',
-          }}
-        />
-      </div>
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-light mb-6">
+              CRESCENT TECHWORKS INNOVATIONS LLP is a modern engineering and design consultancy. 
+              We partner with innovative startups and visionary enterprises to build custom web applications, 
+              scalable mobile ecosystems, and automated cloud workflows that deliver exponential growth.
+            </p>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-[60px] lg:px-[100px]">
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="text-center md:text-left mb-1"
-        >
-          <h2 className="text-[28px] sm:text-[40px] md:text-[56px] font-bold leading-[1.05] tracking-tight md:mt-10 mb-4 md:mb-0 font-extrabold">
-            <span className="block text-gray-900 ">About</span>
-
-            <span
-              className="whitespace-nowrap text-[0.9em] sm:text-[0.8em] md:text-[0.84em] bg-clip-text text-transparent font-extrabold"
-              style={{
-                backgroundImage:
-                  'linear-gradient(135deg,#06B6D4,#3B82F6,#8B5CF6)',
-              }}
-            >
-              CRESCENT TECHWORKS INNOVATIONS LLP
-            </span>
-          </h2>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-[55%_1fr] gap-10 lg:gap-[60px] items-center">
-          {/* Left Side */}
-          <div className="lg:pr-[20px]">
-            <motion.p
-              initial={{ opacity: 0, x: -30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-[18px] text-gray-700 leading-[1.7] mb-4 md:mb-3 text-center md:text-left"
-            >
-              We're a passionate team of digital craftspeople dedicated
-              to creating exceptional digital experiences.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, x: -30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-[18px] text-gray-700 leading-[1.7] mb-4 md:mb-4 text-center md:text-left"
-            >
-              Founded in 2022, we've grown from a small startup to a
-              leading digital agency working with clients worldwide.
-            </motion.p>
-
-            {/* Values */}
-            <div className="space-y-[16px] w-fit mx-auto md:w-full">
-              {values.map((val, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.3 + i * 0.1,
-                  }}
-                  className="flex items-center gap-[16px]"
-                >
-                  <div className="w-[42px] h-[42px] rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-cyan-500 shadow-sm shrink-0">
-                    {val.icon}
+            <div className="space-y-3.5 mb-8 w-full">
+              {highlights.map((item, idx) => (
+                <div key={idx} className="flex items-center gap-3">
+                  <div className="w-5 h-5 rounded-full bg-cyan-950 border border-cyan-500/40 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-3 h-3 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
-
-                  <span className="text-[16px] text-gray-700 font-medium">
-                    {val.title}
-                  </span>
-                </motion.div>
+                  <span className="text-sm sm:text-base text-slate-300 font-normal">{item}</span>
+                </div>
               ))}
             </div>
-          </div>
 
-          {/* Right Side Stats */}
-          <div className="grid grid-cols-2 gap-4 md:gap-6 lg:pl-[20px]">
-            {stats.map((stat, i) => (
-              <StatCard key={i} stat={stat} index={i} />
+            <Link
+              to="/about"
+              className="neon-btn-primary px-7 py-3.5 rounded-full font-semibold text-sm sm:text-base inline-flex items-center gap-2 group"
+            >
+              <span>Learn More About Our Journey</span>
+              <svg 
+                className="w-4 h-4 transition-transform group-hover:translate-x-1" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
+          </motion.div>
+
+          {/* Right Stats Grid (5 cols) */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            className="lg:col-span-5 grid grid-cols-2 gap-4 sm:gap-6"
+          >
+            {stats.map((item, idx) => (
+              <div
+                key={idx}
+                className="relative rounded-2xl sm:rounded-3xl p-6 bg-slate-900/60 backdrop-blur-xl border border-white/[0.08] hover:border-cyan-500/40 transition-all duration-300 shadow-xl group flex flex-col justify-between"
+              >
+                <div 
+                  className="w-8 h-8 rounded-xl mb-4 flex items-center justify-center"
+                  style={{
+                    backgroundColor: `${item.color}15`,
+                    border: `1px solid ${item.color}40`,
+                  }}
+                >
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: item.color }} />
+                </div>
+
+                <div>
+                  <div className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-1 group-hover:text-cyan-300 transition-colors">
+                    <AnimatedCounter to={item.numericValue} suffix={item.suffix} />
+                  </div>
+                  <div className="text-xs sm:text-sm text-slate-400 font-light leading-snug">
+                    {item.label}
+                  </div>
+                </div>
+              </div>
             ))}
-          </div>
+          </motion.div>
+
         </div>
       </div>
     </section>
